@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: ["@nuxtjs/i18n"],
   app: {
     head: {
       title: "Luuk Brauckmann",
@@ -7,11 +8,11 @@ export default defineNuxtConfig({
       viewport: "width=device-width, initial-scale=1",
       meta: [
         {
-          name: 'color-scheme',
-          content: 'light dark'
-        }
-      ]
-    }
+          name: "color-scheme",
+          content: "light dark",
+        },
+      ],
+    },
   },
   runtimeConfig: {
     public: {
@@ -19,4 +20,7 @@ export default defineNuxtConfig({
       datocmsGraphqlUrl: process.env.DATOCMS_GRAPHQL_URL,
     },
   },
-})
+  i18n: {
+    vueI18n: "./i18n.config.ts",
+  },
+});
