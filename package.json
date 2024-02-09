@@ -1,21 +1,16 @@
 {
-  "name": "nuxt-app",
-  "private": true,
+  "name": "luukbrauckmann",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "devDependencies": {
-    "@nuxtjs/i18n": "^8.0.0",
-    "nuxt": "^3.9.3",
-    "vue": "^3.4.14",
-    "vue-router": "^4.2.5"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "vue-datocms": "^5.0.0"
+    "astro": "^4.3.5",
+    "typescript": "^5.3.3"
   }
 }
