@@ -1,7 +1,7 @@
 export default class DatoCMS {
   constructor() {}
 
-  async request() {
+  async request(query) {
     const response = await fetch("https://graphql.datocms.com/", {
       method: "POST",
       headers: {
@@ -9,10 +9,7 @@ export default class DatoCMS {
         Accept: "application/json",
         Authorization: `Bearer ${import.meta.env.DATOCMS_API_KEY}`,
       },
-      body: JSON.stringify({
-        query: `
-          `,
-      }),
+      body: JSON.stringify({ query }),
     });
 
     const json = await response.json();
