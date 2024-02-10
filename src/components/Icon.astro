@@ -1,4 +1,10 @@
 ---
+import type { IconName } from "@assets/icon-sprite";
+
+interface Props {
+  name: IconName;
+}
+
 const { name } = Astro.props;
 ---
 
@@ -9,8 +15,9 @@ const { name } = Astro.props;
 <style>
   svg {
     display: inline-block;
-    width: 1rem;
-    height: 1rem;
+    width: 1em;
+    height: 1em;
     color: currentColor;
+    vertical-align: text-top;
   }
 </style>

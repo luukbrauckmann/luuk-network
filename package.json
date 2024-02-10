@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "predev": "svg-sprite --symbol --symbol-dest='src/assets' --symbol-sprite=icon-sprite.svg src/assets/icons/*.svg",
+    "predev": "svg-sprite --symbol --symbol-dest='src/assets' --symbol-sprite=icon-sprite.svg src/assets/icons/*.svg && jiti scripts/icon-types.ts",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
@@ -12,9 +12,11 @@
   },
   "dependencies": {
     "astro": "^4.3.5",
+    "jiti": "^1.21.0",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@types/node": "^20.11.17",
     "svg-sprite": "^2.0.2"
   }
 }

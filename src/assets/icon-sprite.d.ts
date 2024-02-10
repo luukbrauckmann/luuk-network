@@ -1,0 +1,1 @@
+export type IconName = 'discord' | 'github' | 'home' | 'instagram' | 'linkedin' | 'magnifying-glass' | 'mastodon' | 'x';
