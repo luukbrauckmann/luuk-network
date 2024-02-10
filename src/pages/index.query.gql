@@ -1,0 +1,10 @@
+query Home {
+  home(locale: nl) {
+    title
+    _seoMetaTags {
+      attributes
+      content
+      tag
+    }
+  }
+}
