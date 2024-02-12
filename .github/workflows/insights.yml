@@ -1,8 +1,12 @@
 name: Insights
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
-jobs:
-  run-unlighthouse:
+on:
+  workflow_run:
+    workflows: ["build"]
+    types:
+      - completed
+jobs: 
+  lighthouse:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4 
