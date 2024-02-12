@@ -1,0 +1,12 @@
+name: Insights
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  run-unlighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+      - run: npm install -g @unlighthouse/cli puppeteer
+      - run: unlighthouse-ci --site https://luukbrauckmann.dev/ --debug --build-static --output-path insights
+
