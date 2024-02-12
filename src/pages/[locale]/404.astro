@@ -1,7 +1,20 @@
 ---
+import { datocms } from "@lib";
+import query from "./404.query.graphql";
 import { Default } from "@layouts";
----
+import type { NotFoundRecord } from "@lib/types/datocms";
 
+export async function getStaticPaths() {
+  return [
+    { params: { locale: 'nl' } },
+    { params: { locale: 'en' } }
+  ];
+}
+
+const { locale } = Astro.params;
+
+const { page } = await datocms.request(query, { locale }) as { page: NotFoundRecord };
+---
 <Default>
   <h1>Not Found</h1>
 
