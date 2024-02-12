@@ -8,15 +8,21 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "generate": "graphql-codegen --config codegen.yml",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
+    "@rollup/plugin-graphql": "^2.0.4",
     "astro": "^4.3.5",
     "jiti": "^1.21.0",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@types/node": "^20.11.17",
+    "@graphql-codegen/cli": "5.0.2",
+    "@graphql-codegen/typescript": "4.0.4",
+    "@graphql-codegen/typescript-document-nodes": "4.0.4",
+    "@graphql-codegen/typescript-operations": "^4.1.2",
     "svg-sprite": "^2.0.2"
   }
 }

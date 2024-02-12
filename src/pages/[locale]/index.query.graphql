@@ -1,0 +1,10 @@
+query Home($locale: SiteLocale!) {
+  page: home(locale: $locale) {
+    seo {
+      title
+      description
+    }
+    title
+    body
+  }
+}
