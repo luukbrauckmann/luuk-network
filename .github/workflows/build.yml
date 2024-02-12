@@ -1,4 +1,4 @@
-name: Test
+name: CI Build
 on:
   check_run:
     types: [completed]
