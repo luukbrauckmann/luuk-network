@@ -4,11 +4,11 @@ on: [push]
 jobs:
   run-unlighthouse:
     runs-on: ubuntu-latest
-     - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4 
         with:
           fetch-depth: 0
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-    steps:
       - name: Install Dependencies
         run: npm install -g @unlighthouse/cli puppeteer wrangler
       - name: Run lighthouse tests
