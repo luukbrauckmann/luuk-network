@@ -4,9 +4,14 @@ on: [push]
 jobs:
   run-unlighthouse:
     runs-on: ubuntu-latest
+     - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
     steps:
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v4
-      - run: npm install -g @unlighthouse/cli puppeteer
-      - run: unlighthouse-ci --site https://luukbrauckmann.dev/ --debug --build-static --output-path insights
-
+      - name: Install Dependencies
+        run: npm install -g @unlighthouse/cli puppeteer wrangler
+      - name: Run lighthouse tests
+        run: unlighthouse-ci --site https://luukbrauckmann.dev/ --debug --build-static --output-path insights
+      - name: Deploy
+        run: npx wrangler pages deploy insights --outdir
