@@ -2,7 +2,18 @@ name: Insights
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  run-unlighthouse:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get Deployment URL
+        run:
+          echo "DEPLOYMENT_URL=$(echo "${{ github.event.check_run.output.summary
+          }}" | grep -o "href\=.*>https" | cut -c 7-43)" >> $GITHUB_ENV
+      - run: echo $DEPLOYMENT_URL
+      
+  lighthouse:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4 
