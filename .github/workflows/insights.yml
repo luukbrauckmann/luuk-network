@@ -1,9 +1,7 @@
 name: Insights
 on:
-  workflow_run:
-    workflows: ["CI Build"]
-    types:
-      - completed
+  check_run:
+    types: [completed]
 jobs: 
   build:
     name: Check CI build for completion
