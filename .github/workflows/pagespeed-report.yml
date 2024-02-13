@@ -1,10 +1,10 @@
-name: Insights
+name: Pagespeed Report
 on:
   check_run:
     types: [completed]
 jobs: 
-  prepare_insighs:
-    name: Prepare insights 
+  prepare:
+    name: Prepare
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,22 +14,22 @@ jobs:
           }}" | grep -o "href\=.*>https" | cut -c 7-43)" >> $GITHUB_ENV
       - run: echo "Build is finished"
       
-  generate_insights:
-    needs: prepare_insighs
-    name: Generate insights
+  generate:
+    needs: prepare
+    name: Generate
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4 
       - name: Install dependencies
         run:  npm install -g @unlighthouse/cli puppeteer
       - name: Run lighthouse tests
-        run: unlighthouse-ci --site ${{ vars.URL }} --debug --build-static --output-path insights
+        run: unlighthouse-ci --site ${{ vars.URL }} --debug --build-static --output-path pagespeed
         
-  deploy_insights: 
-    needs: generate_insights
-    name: Deploy insights
+  deploy: 
+    needs: generate
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Should deploy
-        run: echo "Should deploy ./insights"
+        run: echo "Should deploy ./pagespeed"
