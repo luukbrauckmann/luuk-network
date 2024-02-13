@@ -4,7 +4,7 @@ on:
     types: [completed]
 jobs: 
   check_build:
-    name: Check CI build
+    name: Wait 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,8 +14,8 @@ jobs:
           }}" | grep -o "href\=.*>https" | cut -c 7-43)" >> $GITHUB_ENV
       - run: echo "Build is finished"
       
-  generate_lighthouse_report:
-    name: Generate lighouse report
+  generate_insights:
+    name: Generate insights
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4 
@@ -25,3 +25,11 @@ jobs:
         run:  npm install -g @unlighthouse/cli puppeteer
       - name: Run lighthouse tests
         run: unlighthouse-ci --site ${{ vars.URL }} --debug --build-static --output-path insights
+        
+  deploy_insights: 
+    name: Deploy insights
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Should deploy
+        run: echo "Should deploy ./insights"
