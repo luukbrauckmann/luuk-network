@@ -15,15 +15,26 @@ jobs:
     name: Generate
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Install dependencies
         run:  npm install -g @unlighthouse/cli puppeteer
       - name: Run lighthouse tests
         run: unlighthouse-ci --site ${{ vars.URL }} --debug --build-static --output-path pagespeed
+      - name: Store pagespeed for deploy
+        uses: actions/upload-artifact@v4
+        with:
+          name: pagespeed
+          path: pagespeed
         
   deploy: 
     needs: generate
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Should deploy
+      - name: Get pagespeed
+        uses: actions/download-artifact@v4
+        with:
+          name: pagespeed
+      - name: Check
         run: ls
