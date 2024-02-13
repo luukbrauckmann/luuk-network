@@ -3,8 +3,8 @@ on:
   check_run:
     types: [completed]
 jobs: 
-  check_build:
-    name: Wait 
+  prepare_insighs:
+    name: Prepare insights 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
