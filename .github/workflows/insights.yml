@@ -23,3 +23,4 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: luukbrauckmann
           directory: insights
+          workingDirectory: ${{ vars.URL }}/insights
