@@ -13,6 +13,6 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install Dependencies
-        run: npm install -g @unlighthouse/cli puppeteer
+        run: npm install @unlighthouse/cli puppeteer
       - name: Run lighthouse tests
         run: unlighthouse-ci --site ${{ vars.URL }} --debug --build-static --output-path insights
