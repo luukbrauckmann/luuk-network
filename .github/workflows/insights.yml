@@ -15,6 +15,6 @@ jobs:
       - name: Install Dependencies
         run: npm install -g @unlighthouse/cli puppeteer wrangler
       - name: Run lighthouse tests
-        run: unlighthouse-ci --site https://luukbrauckmann.dev/ --debug --build-static --output-path insights
+        run: unlighthouse-ci --site $URL --debug --build-static --output-path insights
       - name: Deploy
-        run: npx wrangler pages deploy insights --project-name=luukbrauckmann.dev --outdir=./insights
+        run: npx wrangler pages deploy insights --project-name=$PROJECT --outdir=./insights
