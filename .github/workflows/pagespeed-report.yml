@@ -38,4 +38,4 @@ jobs:
           name: pagespeed
           path: pagespeed
       - name: Check
-        run: ls
+        run: ls pagespeed
