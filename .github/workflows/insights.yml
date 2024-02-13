@@ -16,5 +16,3 @@ jobs:
         run: npm install -g @unlighthouse/cli puppeteer wrangler
       - name: Run lighthouse tests
         run: unlighthouse-ci --site $URL --debug --build-static --output-path insights
-      - name: Deploy
-        run: npx wrangler pages deploy insights --project-name=$PROJECT --outdir=./insights
