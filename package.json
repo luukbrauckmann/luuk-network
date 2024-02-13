@@ -13,6 +13,7 @@
     "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.0.5",
     "@rollup/plugin-graphql": "^2.0.4",
     "astro": "^4.3.5",
     "jiti": "^1.21.0",
