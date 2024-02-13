@@ -12,6 +12,6 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install Dependencies
-        run: npm install -g @unlighthouse/cli puppeteer wrangler
+        run: npm install -g @unlighthouse/cli puppeteer
       - name: Run lighthouse tests
         run: unlighthouse-ci --site $URL --debug --build-static --output-path insights
