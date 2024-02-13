@@ -20,21 +20,21 @@ jobs:
       - name: Install dependencies
         run:  npm install -g @unlighthouse/cli puppeteer
       - name: Run lighthouse tests
-        run: unlighthouse-ci --site ${{ vars.URL }} --debug --build-static --output-path pagespeed
-      - name: Store pagespeed for deploy
+        run: unlighthouse-ci --site ${{ vars.URL }} --debug --build-static --output-path pagespeed-report
+      - name: Store Pagespeed Report for deploy
         uses: actions/upload-artifact@v4
         with:
-          name: pagespeed
-          path: pagespeed
+          name: pagespeed-report
+          path: pagespeed-report
         
   deploy: 
     needs: generate
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Get pagespeed
+      - name: Get Pagespeed Report
         uses: actions/download-artifact@v4
         with:
-          name: pagespeed
+          name: pagespeed-report
       - name: Files to deploy
         run: ls
