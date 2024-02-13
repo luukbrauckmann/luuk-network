@@ -15,6 +15,7 @@ jobs:
       - run: echo "Build is finished"
       
   generate_insights:
+    needs: prepare_insighs
     name: Generate insights
     runs-on: ubuntu-latest
     steps:
@@ -27,6 +28,7 @@ jobs:
         run: unlighthouse-ci --site ${{ vars.URL }} --debug --build-static --output-path insights
         
   deploy_insights: 
+    needs: generate_insights
     name: Deploy insights
     runs-on: ubuntu-latest
     steps:
