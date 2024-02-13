@@ -16,5 +16,10 @@ jobs:
         run:  npm install -g @unlighthouse/cli puppeteer
       - name: Run lighthouse tests
         run: unlighthouse-ci --site ${{ vars.URL }} --debug --build-static --output-path insights
-      - name: Check folders
-        run: ls
+      - name: Deploy
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.ACCOUNT_ID }}
+          projectName: luukbrauckmann
+          directory: insights
