@@ -7,7 +7,6 @@ jobs:
     name: Prepare
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       - name: Get Deployment URL
         run: echo "DEPLOYMENT_URL=$(echo "${{ github.event.check_run.output.summary }}" | grep -o "href\=.*>https" | cut -c 7-43)" >> $GITHUB_ENV
 
@@ -16,7 +15,6 @@ jobs:
     name: Generate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4 
       - name: Install dependencies
         run:  npm install -g @unlighthouse/cli puppeteer
       - name: Run lighthouse tests
@@ -27,6 +25,5 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       - name: Should deploy
         run: ls
