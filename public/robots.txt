@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://luukbrauckmann.dev/sitemap-index.xml
