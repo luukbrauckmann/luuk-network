@@ -3,18 +3,18 @@ on:
   check_run:
     types: [completed]
 jobs: 
-  build:
-    name: Check CI build for completion
+  check_build:
+    name: Check CI build
     runs-on: ubuntu-latest
- 
     steps:
       - uses: actions/checkout@v4
       - name: Get Deployment URL
         run:
           echo "DEPLOYMENT_URL=$(echo "${{ github.event.check_run.output.summary
           }}" | grep -o "href\=.*>https" | cut -c 7-43)" >> $GITHUB_ENV
-      - run: echo $DEPLOYMENT_URL
-  lighthouse:
+      - run: echo "Build is finished"
+      
+  generate_lighthouse_report:
     name: Generate lighouse report
     runs-on: ubuntu-latest
     steps:
