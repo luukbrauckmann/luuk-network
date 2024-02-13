@@ -37,4 +37,4 @@ jobs:
         with:
           name: pagespeed
       - name: Check
-        run: ls
+        run: ls pagespeed
