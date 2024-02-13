@@ -36,6 +36,5 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: pagespeed
-          path: pagespeed
-      - name: Check
-        run: ls pagespeed
+      - name: Files to deploy
+        run: ls
