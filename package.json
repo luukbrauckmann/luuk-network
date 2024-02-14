@@ -17,6 +17,7 @@
     "@rollup/plugin-graphql": "^2.0.4",
     "astro": "^4.3.5",
     "jiti": "^1.21.0",
+    "sass": "^1.70.0",
     "typescript": "^5.3.3"
   },
   "devDependencies": {

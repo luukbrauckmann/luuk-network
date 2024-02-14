@@ -1,5 +1,5 @@
 ---
-import { IconSprite } from "@components";
+import { IconSprite, LocaleSelector } from "@components";
 import "@styles";
 ---
 
@@ -14,17 +14,8 @@ import "@styles";
   </head>
   <body>
     <nav>
-      <ul>
-        <li>
-          <a href="/nl">NL</a>
-        </li>
-        <li>
-          <a href="/en">EN</a>
-        </li>
-      </ul>
+      <LocaleSelector />
     </nav>
-
-    <p>test</p>
 
     <slot />
 
