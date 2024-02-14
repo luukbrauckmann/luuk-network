@@ -16,6 +16,6 @@ const { locale } = Astro.params;
 const { page } = await datocms.request(query, { locale }) as { page: NotFoundRecord };
 ---
 <Default>
-  <h1>Not Found</h1>
+  <h1>{ page.title }</h1>
 
 </Default>
