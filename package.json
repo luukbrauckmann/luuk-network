@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "codegen": "graphql-codegen --config codegen.ts"
+    "codegen": "graphql-codegen --config codegen.ts",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.0.5",

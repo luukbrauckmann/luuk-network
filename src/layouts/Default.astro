@@ -1,9 +1,11 @@
 ---
 import { IconSprite, Nav } from "@components";
 import "@styles";
+
+const { locale } = Astro.params;
 ---
 
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="utf-8" />
     <link rel="sitemap" href="/sitemap-index.xml" />
