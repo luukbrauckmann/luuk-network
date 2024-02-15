@@ -13,6 +13,7 @@
     }
   ],
   "importOrder": [
+    "<THIRD_PARTY_MODULES>",
     "^astro/(.*)$",
     "^@astrojs/(.*)$",
     "^@assets/(.*)$",
