@@ -1,7 +1,7 @@
 import graphql from "@rollup/plugin-graphql";
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
+import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
-import type { PluginOption } from "vite";
 
 const port = 4321;
 export const site = process.env.CF_PAGES
@@ -10,10 +10,22 @@ export const site = process.env.CF_PAGES
 
 // https://astro.build/config
 export default defineConfig({
+  adapter: cloudflare({
+    mode: "directory",
+    functionPerRoute: true,
+    runtime: {
+      mode: "local",
+      type: "pages",
+    },
+  }),
+  image: {
+    service: passthroughImageService(),
+  },
+  output: "hybrid",
   site,
   integrations: [sitemap()],
   server: { port },
   vite: {
-    plugins: [graphql() as PluginOption],
+    plugins: [graphql()],
   },
 });

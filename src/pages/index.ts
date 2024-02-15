@@ -8,9 +8,6 @@ const redirect = (url: string) =>
     headers: { Location: url },
   });
 
-/**
- * Redirect to the home page in the user's preferred language.
- */
 export const GET: APIRoute = () => {
   return redirect(`/nl/`);
 };
