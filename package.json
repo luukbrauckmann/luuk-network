@@ -25,6 +25,7 @@
     "@graphql-codegen/typescript": "4.0.4",
     "@graphql-codegen/typescript-document-nodes": "4.0.4",
     "@graphql-codegen/typescript-operations": "^4.1.2",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-css-order": "^2.0.1",

@@ -1,5 +1,9 @@
 {
-  "plugins": ["prettier-plugin-astro", "prettier-plugin-css-order"],
+  "plugins": [
+    "prettier-plugin-astro",
+    "prettier-plugin-css-order",
+    "@trivago/prettier-plugin-sort-imports"
+  ],
   "overrides": [
     {
       "files": "*.astro",
@@ -7,5 +11,18 @@
         "parser": "astro"
       }
     }
-  ]
+  ],
+  "importOrder": [
+    "^astro/(.*)$",
+    "^@astrojs/(.*)$",
+    "^@assets/(.*)$",
+    "^@components/(.*)$",
+    "^@layouts/(.*)$",
+    "^@lib/(.*)$",
+    "^@pages/(.*)$",
+    "^@styles/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

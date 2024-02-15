@@ -1,4 +1,4 @@
-import { print, type DocumentNode } from "graphql";
+import { type DocumentNode, print } from "graphql";
 
 export async function request<T>(
   query: DocumentNode,
