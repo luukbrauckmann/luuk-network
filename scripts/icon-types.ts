@@ -11,10 +11,10 @@ async function writeIconNameTypes() {
     "./src/assets/icon-sprite.d.ts",
     `export type IconName = ${iconNames
       .map((name) => `'${name}'`)
-      .join(" | ")};`
+      .join(" | ")};`,
   );
 }
 
 writeIconNameTypes().then(() =>
-  console.log("Icon names written to src/assets/icon-sprite.d.ts")
+  console.log("Icon names written to src/assets/icon-sprite.d.ts"),
 );

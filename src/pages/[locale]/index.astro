@@ -6,19 +6,18 @@ import { Icon } from "@components";
 import type { HomeRecord } from "@lib/types/datocms";
 
 export async function getStaticPaths() {
-  return [
-    { params: { locale: 'nl' } },
-    { params: { locale: 'en' } }
-  ];
+  return [{ params: { locale: "nl" } }, { params: { locale: "en" } }];
 }
 
 const { locale } = Astro.params;
 
-const { page } = await datocms.request(query, { locale }) as { page: HomeRecord };
+const { page } = (await datocms.request(query, { locale })) as {
+  page: HomeRecord;
+};
 ---
 
 <Default>
-  <h1>{ page.title }</h1>
+  <h1>{page.title}</h1>
 
   <Icon name="codepen" />
   <Icon name="discord" />

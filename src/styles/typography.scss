@@ -8,16 +8,19 @@
   --lh-md: 1.4;
   --lh-lg: 1.6;
   --lh-xl: 1.8;
-  
+
   /* Font Scale Ratio @see https://typescale.com/ */
   --font-scale-ratio: 1.618; /* Golden Ratio */
-  
+
   /* Font Size */
   --fs-base: 18px;
   --fs-sm: calc(1em / var(--font-scale-ratio));
   --fs-md: calc(1em * var(--font-scale-ratio));
   --fs-lg: calc(1em * var(--font-scale-ratio) * var(--font-scale-ratio));
-  --fs-xl: calc(1em * var(--font-scale-ratio) * var(--font-scale-ratio) * var(--font-scale-ratio));
+  --fs-xl: calc(
+    1em * var(--font-scale-ratio) * var(--font-scale-ratio) *
+      var(--font-scale-ratio)
+  );
 }
 
 body {
@@ -25,18 +28,18 @@ body {
   font-family: var(--ff-primary);
 }
 
-h1 { 
-  font-size: var(--fs-xl); 
+h1 {
+  font-size: var(--fs-xl);
 }
 
-h2 { 
-  font-size: var(--fs-lg); 
+h2 {
+  font-size: var(--fs-lg);
 }
 
-h3 { 
-  font-size: var(--fs-md); 
+h3 {
+  font-size: var(--fs-md);
 }
 
-small { 
-  font-size: var(--fs-sm); 
+small {
+  font-size: var(--fs-sm);
 }

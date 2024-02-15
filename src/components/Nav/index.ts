@@ -1,1 +1,1 @@
-export { default } from './Nav.astro';
+export { default } from "./Nav.astro";
