@@ -3,33 +3,23 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "predev": "svg-sprite --symbol --symbol-dest='src/assets' --symbol-sprite=icon-sprite.svg src/assets/icons/*.svg && jiti scripts/icon-types.ts",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "codegen": "graphql-codegen --config codegen.ts",
     "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/cloudflare": "^9.0.0",
     "@astrojs/sitemap": "^3.0.5",
     "@rollup/plugin-graphql": "^2.0.4",
-    "astro": "^4.3.5",
-    "jiti": "^1.21.0",
-    "sass": "^1.70.0",
-    "typescript": "^5.3.3"
+    "astro": "^4.3.5"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "5.0.2",
-    "@graphql-codegen/typescript": "4.0.4",
-    "@graphql-codegen/typescript-document-nodes": "4.0.4",
-    "@graphql-codegen/typescript-operations": "^4.1.2",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-css-order": "^2.0.1",
-    "svg-sprite": "^2.0.2",
     "wrangler": "^3.28.1"
   }
 }
