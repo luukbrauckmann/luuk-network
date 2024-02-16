@@ -1,1 +1,0 @@
-export { default as IconSprite } from "./IconSprite.astro";

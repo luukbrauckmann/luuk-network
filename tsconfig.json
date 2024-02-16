@@ -14,5 +14,6 @@
       "@styles": ["src/styles"],
       "@styles/*": ["src/styles/*"]
     },
+    "jsx": "react"
   }
 }
