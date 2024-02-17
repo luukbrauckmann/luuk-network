@@ -1,3 +1,3 @@
-import "./reset.scss";
-import "./typography.scss";
-import "./variables.scss";
+import "./reset.css";
+import "./typography.css";
+import "./variables.css";

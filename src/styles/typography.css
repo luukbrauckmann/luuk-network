@@ -1,19 +1,38 @@
+@font-face {
+  src:
+    url("/fonts/Open Sans/OpenSans.woff2") format("woff2"),
+    url("/fonts/Open Sans/OpenSans.woff") format("woff"),
+    url("/fonts/Open Sans/OpenSans.ttf") format("truetype");
+  font-family: "Open Sans";
+  font-display: swap;
+}
+
+@font-face {
+  font-style: italic;
+  src:
+    url("/fonts/Open Sans/OpenSans-Italic.woff2") format("woff2"),
+    url("/fonts/Open Sans/OpenSans-Italic.woff") format("woff"),
+    url("/fonts/Open Sans/OpenSans-Italic.ttf") format("truetype");
+  font-family: "Open Sans";
+  font-display: swap;
+}
+
 :root {
   /* Font Family */
-  --ff-primary: sans-serif;
+  --ff-primary: "Open Sans", system-ui, sans-serif;
 
   /* Line Height */
   --lh-base: 1.4;
-  --lh-sm: 1.2;
-  --lh-md: 1.4;
-  --lh-lg: 1.6;
-  --lh-xl: 1.8;
+  --lh-sm: calc(var(--lh-base) - 0.2);
+  --lh-md: var(--lh-base);
+  --lh-lg: calc(var(--lh-base) + 0.2);
+  --lh-xl: calc(var(--lh-base) + 0.4);
 
   /* Font Scale Ratio @see https://typescale.com/ */
   --font-scale-ratio: 1.618; /* Golden Ratio */
 
   /* Font Size */
-  --fs-base: 18px;
+  --fs-base: 16px;
   --fs-sm: calc(1em / var(--font-scale-ratio));
   --fs-md: calc(1em * var(--font-scale-ratio));
   --fs-lg: calc(1em * var(--font-scale-ratio) * var(--font-scale-ratio));
@@ -42,4 +61,11 @@ h3 {
 
 small {
   font-size: var(--fs-sm);
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --lh-base: 1.6;
+    --fs-base: 18px;
+  }
 }
