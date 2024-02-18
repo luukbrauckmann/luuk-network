@@ -60,14 +60,19 @@ body {
 h1 {
   font-size: var(--fs-xl);
   font-family: var(--ff-heading);
+  line-height: var(--lh-sm);
 }
 
 h2 {
   font-size: var(--fs-lg);
+  font-family: var(--ff-heading);
+  line-height: var(--lh-sm);
 }
 
 h3 {
   font-size: var(--fs-md);
+  font-family: var(--ff-heading);
+  line-height: var(--lh-sm);
 }
 
 small {

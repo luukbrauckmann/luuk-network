@@ -1,4 +1,15 @@
 :root {
+  --c-primary: oklch(69.06% 0.167 256.64);
+  --c-secondary: oklch(27.02% 0.041 271.33);
+  --c-background: oklch(21.71% 0.034 258.73);
 
   color-scheme: dark light;
+}
+
+body {
+  background-color: var(--c-background);
+}
+
+h1 {
+  color: var(--c-primary);
 }
