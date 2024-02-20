@@ -7,7 +7,7 @@ class RiveCanvas extends HTMLElement {
   constructor() {
     super();
 
-    const canvas = document.querySelector("canvas");
+    const canvas = this.querySelector("canvas");
 
     const { src, fit, alignment, autoplay, statemachines } = canvas.dataset;
     
@@ -19,9 +19,6 @@ class RiveCanvas extends HTMLElement {
       layout, 
       autoplay: typeof autoplay != "undefined",
       stateMachines: statemachines,
-      onLoad: () => {
-        rive.resizeDrawingSurfaceToCanvas();
-      },
     });
   }
 }
