@@ -1,0 +1,26 @@
+---
+interface Props {
+  src: string,
+  fit?: "contain" | "cover",
+  alignment?: "center" | "top" | "bottom" | "left" | "right" | "top-left" | "top-right" | "bottom-left" | "bottom-right",
+  autoplay?: boolean,
+  stateMachines?: string | string[]
+}
+
+const {
+  src,
+  fit = "contain",
+  alignment = "center",
+  autoplay = true,
+  stateMachines = ""
+} = Astro.props
+
+console.log(Astro.props);
+
+---
+
+<rive-canvas>
+  <canvas width="500" height="500" data-src={src} data-fit={fit} data-alignment={alignment} data-autoplay={autoplay} data-statemachines={stateMachines}></canvas>
+</rive-canvas>
+
+<script src="./Rive.client.js"></script>

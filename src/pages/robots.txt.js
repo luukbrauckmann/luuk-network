@@ -1,6 +1,4 @@
-import type { APIRoute } from "astro";
-
-const robotsTxt = ({ site }: { site: string }) =>
+const robotsTxt = ({ site }) =>
   `
 User-agent: *
 Allow: /
@@ -8,10 +6,10 @@ Allow: /
 Sitemap: ${site}/sitemap-index.xml
 `.trim();
 
-export const GET: APIRoute = (context) => {
+export const GET = (context) => {
   return new Response(
     robotsTxt({
-      site: context.site!.origin,
+      site: context.site.origin,
     }),
     {
       headers: {

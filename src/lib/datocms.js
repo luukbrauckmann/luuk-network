@@ -1,9 +1,12 @@
-import { type DocumentNode, print } from "graphql";
+import { print } from "graphql";
 
-export async function request<T>(
-  query: DocumentNode,
-  variables: { locale: string },
-): Promise<T> {
+/**
+ * Request data from DatoCMS
+ * @param {*} query 
+ * @param {*} variables 
+ * @returns {Promise<*>} 
+ */
+export async function request(query, variables) {
   const response = await fetch("https://graphql.datocms.com/", {
     method: "POST",
     headers: {

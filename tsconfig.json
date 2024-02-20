@@ -1,6 +1,7 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
+    "checkJs": true,
     "baseUrl": "./",
     "paths": {
       "@assets/*": ["src/assets/*"],
@@ -14,6 +15,6 @@
       "@styles": ["src/styles"],
       "@styles/*": ["src/styles/*"]
     },
-    "jsx": "react"
+    "jsx": "preserve",
   }
 }

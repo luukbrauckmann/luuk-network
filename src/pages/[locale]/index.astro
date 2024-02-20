@@ -2,7 +2,7 @@
 import { datocms } from "@lib";
 import query from "./index.query.graphql";
 import { Default } from "@layouts";
-import { Icon } from "@components";
+import { Icon, Rive } from "@components";
 import type { HomeRecord } from "@lib/types/datocms";
 
 export async function getStaticPaths() {
@@ -17,23 +17,30 @@ const { page } = (await datocms.request(query, { locale })) as {
 ---
 
 <Default>
-  <h1>{page.title}</h1>
+  <section>
+    <h1>{page.title}</h1>
+    
+    <small>{page.title}</small>
+  
+    <p>This is my playground</p>
+  
+    <Icon name="codepen" />
+    <Icon name="discord" />
+    <Icon name="github" />
+    <Icon name="home" />
+    <Icon name="instagram" />
+    <Icon name="linkedin" />
+    <Icon name="magnifying-glass" />
+    <Icon name="mastodon" />
+    <Icon name="x" />
 
-  <h2>{page.title}</h2>
+    <Rive src="https://cdn.rive.app/animations/vehicles.riv" stateMachines="bumpy" autoplay={true} />
+  </section>
 
-  <h3>{page.title}</h3>
-
-  <small>{page.title}</small>
-
-  <p>This is my playground</p>
-
-  <Icon name="codepen" />
-  <Icon name="discord" />
-  <Icon name="github" />
-  <Icon name="home" />
-  <Icon name="instagram" />
-  <Icon name="linkedin" />
-  <Icon name="magnifying-glass" />
-  <Icon name="mastodon" />
-  <Icon name="x" />
 </Default>
+
+<style>
+  h2 {
+    grid-column: full;
+  }
+</style>
