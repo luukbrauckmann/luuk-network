@@ -34,9 +34,7 @@ const { page } = (await datocms.request(query, { locale })) as {
     <Icon name="mastodon" />
     <Icon name="x" />
 
-    <Rive src="/rive/Vehicles.riv" stateMachines="bumpy" autoplay={true} >
-      Truck driving over bumby road.
-    </Rive>
+    <Rive src="/rive/Vehicles.riv" fit="cover" stateMachines="bumpy" autoplay={true} />
   </section>
 
 </Default>
