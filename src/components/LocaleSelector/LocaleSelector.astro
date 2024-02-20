@@ -2,15 +2,15 @@
 import { Icon } from "@components";
 ---
 
-<ul>
+<ul class="locale-selector">
   <li>
-    <a href="/nl">
+    <a class="locale-selector__item" href="/nl">
       <Icon name="nl" />
       <span>NL</span>
     </a>
   </li>
   <li>
-    <a href="/en">
+    <a class="locale-selector__item" href="/en">
       <Icon name="en" />
       <span>EN</span>
     </a>
@@ -18,10 +18,14 @@ import { Icon } from "@components";
 </ul>
 
 <style>
-  ul {
+  .locale-selector {
     display: flex;
     gap: var(--sp-sm);
     padding: 0px;
     list-style: none;
+  }
+
+  .locale-selector__item {
+    color: #fff;
   }
 </style>
