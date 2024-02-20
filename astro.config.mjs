@@ -1,4 +1,6 @@
 import graphql from "@rollup/plugin-graphql";
+import topLevelAwait from "vite-plugin-top-level-await";
+import wasm from "vite-plugin-wasm";
 
 import { defineConfig, passthroughImageService } from "astro/config";
 
@@ -27,6 +29,10 @@ export default defineConfig({
   integrations: [sitemap()],
   server: { port },
   vite: {
-    plugins: [graphql()],
+    plugins: [
+      graphql(),
+      topLevelAwait(),
+      wasm()
+    ],
   },
 });
