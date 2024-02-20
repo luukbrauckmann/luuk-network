@@ -4,6 +4,7 @@ import query from "./index.query.graphql";
 import { Default } from "@layouts";
 import { Icon, Rive } from "@components";
 import type { HomeRecord } from "@lib/types/datocms";
+import riveThingUrl from "@assets/rive/vehicle.riv?url";
 
 export async function getStaticPaths() {
   return [{ params: { locale: "nl" } }, { params: { locale: "en" } }];
@@ -34,9 +35,7 @@ const { page } = (await datocms.request(query, { locale })) as {
     <Icon name="mastodon" />
     <Icon name="x" />
 
-    <Rive src="/rive/Vehicles.riv" name="vehicle" fit="Cover" stateMachines="bumpy" autoplay={true} />
-    <Rive src="/rive/Vehicles.riv" name="vehicle" fit="Cover" stateMachines="bumpy" autoplay={true} />
-    <Rive src="/rive/Vehicles.riv" name="vehicle" fit="Cover" stateMachines="bumpy" autoplay={true} />
+    <Rive src="/rive/vehicle.riv" name="vehicle" fit="Cover" stateMachines="bumpy" autoplay={true} />
   </section>
 
 </Default>

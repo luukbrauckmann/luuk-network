@@ -27,6 +27,9 @@ export default defineConfig({
     port
   },
   vite: {
-    plugins: [graphql(), topLevelAwait(), wasm()]
+    plugins: [graphql(), topLevelAwait(), wasm()],
+    worker: {
+      format: "es"
+    }
   }
 });
