@@ -1,9 +1,12 @@
 import riveWASMResource from '@rive-app/canvas-advanced/rive.wasm?url';
-import Rive from '@rive-app/canvas-advanced';
+import RiveBuilder from '@rive-app/canvas-advanced';
 
+const rive = await RiveBuilder({ locateFile: () => riveWASMResource });
 
 addEventListener('message', async ({ data }) => {
-  const rive = await Rive({ locateFile: () => riveWASMResource });
+  const { canvas } = data;
+  
+  const renderer = rive.makeRenderer(canvas, true);
 
-  console.log(rive);
+  console.log(renderer);
 });

@@ -14,6 +14,7 @@
     "@astrojs/partytown": "^2.0.4",
     "@astrojs/sitemap": "^3.0.5",
     "@rive-app/canvas-advanced": "^2.10.1",
+    "@rive-app/webgl-advanced": "^2.10.1",
     "@rollup/plugin-graphql": "^2.0.4",
     "astro": "^4.4.1"
   },
