@@ -1,10 +1,12 @@
-import { Alignment, Fit, Layout, Rive } from "@rive-app/canvas-lite";
+import { Alignment, Fit, Layout, Rive } from "@rive-app/canvas";
 
 class RiveCanvas extends HTMLElement {
   constructor() {
     super();
 
     const canvas = document.querySelector("canvas");
+    const alt = document.querySelector("p");
+
     const { src, fit, alignment, autoplay, statemachines } = canvas.dataset;
 
     const layout = new Layout({ fit: Fit[fit], alignment: Alignment[alignment] });
