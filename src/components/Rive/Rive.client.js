@@ -1,4 +1,7 @@
-import { Alignment, Fit, Layout, Rive } from "@rive-app/canvas";
+import riveWasmUrl from '@rive-app/canvas/rive.wasm?url';
+import { RuntimeLoader, Alignment, Fit, Layout, Rive } from "@rive-app/canvas";
+
+RuntimeLoader.setWasmUrl(riveWasmUrl);
 
 class RiveCanvas extends HTMLElement {
   constructor() {
