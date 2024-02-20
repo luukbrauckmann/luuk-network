@@ -1,4 +1,4 @@
-import { Alignment, Fit, Layout, Rive } from "@rive-app/canvas";
+import { Alignment, Fit, Layout, Rive } from "@rive-app/canvas-lite";
 
 class RiveCanvas extends HTMLElement {
   constructor() {
