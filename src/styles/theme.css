@@ -15,7 +15,3 @@
 body {
   background-color: var(--c-background);
 }
-
-h1 {
-  color: var(--c-primary);
-}
