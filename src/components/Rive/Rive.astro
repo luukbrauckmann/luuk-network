@@ -17,7 +17,9 @@ const {
 ---
 
 <rive-canvas>
-  <canvas width="500" height="500" data-src={src} data-fit={fit} data-alignment={alignment} data-autoplay={autoplay} data-statemachines={stateMachines}></canvas>
+  <canvas width="500" height="500" data-src={src} data-fit={fit} data-alignment={alignment} data-autoplay={autoplay} data-statemachines={stateMachines}>
+    <slot />
+  </canvas>
 </rive-canvas>
 
 <script src="./Rive.client.js"></script>
