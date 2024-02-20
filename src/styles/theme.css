@@ -6,6 +6,12 @@
   color-scheme: dark light;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --c-background: initial;
+  }
+}
+
 body {
   background-color: var(--c-background);
 }
