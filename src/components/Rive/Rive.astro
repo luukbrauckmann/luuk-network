@@ -1,6 +1,7 @@
 ---
 interface Props {
   src: string,
+  name: string,
   fit?: "Contain" | "Cover",
   alignment?: "center" | "top" | "bottom" | "left" | "right" | "top-left" | "top-right" | "bottom-left" | "bottom-right",
   autoplay?: boolean,
@@ -9,6 +10,7 @@ interface Props {
 
 const {
   src,
+  name,
   fit = "Contain",
   alignment = "center",
   autoplay = true,
@@ -17,9 +19,7 @@ const {
 ---
 
 <rive-canvas>
-  <canvas width="500" height="500" data-src={src} data-fit={fit} data-alignment={alignment} data-autoplay={autoplay} data-statemachines={stateMachines}>
-    <slot />
-  </canvas>
+  <canvas width="500" height="500" data-src={src} data-fit={fit} data-alignment={alignment} data-autoplay={autoplay} data-statemachines={stateMachines}></canvas>
 </rive-canvas>
 
 <script src="./Rive.client.js"></script>
