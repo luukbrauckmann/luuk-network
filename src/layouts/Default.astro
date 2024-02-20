@@ -2,6 +2,8 @@
 import { IconSprite, Nav } from "@components";
 import "@styles";
 
+import riveWasmUrl from '@rive-app/canvas/rive.wasm?url';
+
 const { locale } = Astro.params;
 ---
 
@@ -15,6 +17,8 @@ const { locale } = Astro.params;
     <meta name="description" content="Luuk Brauckmann's personal website" />
     <title>Luuk Brauckmann</title>
 
+
+    <link rel="preload" href={riveWasmUrl} as="fetch" crossorigin="anonymous" />
     <link rel="preload" href="/fonts/Open Sans/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/Pixelify Sans/PixelifySans.woff2" as="font" type="font/woff2" crossorigin>
   </head>
