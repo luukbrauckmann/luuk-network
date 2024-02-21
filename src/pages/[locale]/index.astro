@@ -18,30 +18,31 @@ const { page } = (await datocms.request(query, { locale })) as {
 ---
 
 <Default>
-  <section>
+  <section class="subgrid">
     <h1>{page.title}</h1>
-    
+
     <small>{page.title}</small>
-  
-    <p>This is my playground</p>
-  
-    <Icon name="codepen" />
-    <Icon name="discord" />
-    <Icon name="github" />
-    <Icon name="home" />
-    <Icon name="instagram" />
-    <Icon name="linkedin" />
-    <Icon name="magnifying-glass" />
-    <Icon name="mastodon" />
-    <Icon name="x" />
 
-    <Rive src="/rive/vehicle.riv" name="vehicle" fit="Cover" stateMachines="bumpy" autoplay={true} />
+    <p class="text">This is my playground</p>
+
+    <div class="text">
+      <Icon name="discord" />
+      <Icon name="codepen" />
+      <Icon name="github" />
+      <Icon name="home" />
+      <Icon name="instagram" />
+      <Icon name="linkedin" />
+      <Icon name="magnifying-glass" />
+      <Icon name="mastodon" />
+      <Icon name="x" />
+    </div>
+
+    <Rive
+      src="/rive/vehicle.riv"
+      name="vehicle"
+      fit="Cover"
+      stateMachines="bumpy"
+      autoplay={true}
+    />
   </section>
-
 </Default>
-
-<style>
-  h2 {
-    grid-column: full;
-  }
-</style>
