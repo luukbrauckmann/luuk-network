@@ -36,4 +36,7 @@ export default defineConfig({
       format: "es",
     },
   },
+  devToolbar: {
+    enabled: false,
+  },
 });

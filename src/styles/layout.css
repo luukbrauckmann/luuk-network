@@ -1,6 +1,6 @@
 :root {
   --w-text: 800px;
-  --w-main: 200px;
+  --w-main: 1200px;
 }
 
 body {
@@ -9,8 +9,6 @@ body {
   grid-template-columns:
     [full-start] 1fr
     [main-start] minmax(0, var(--w-main))
-    [text-start] min(var(--w-text))
-    [text-end] minmax(0, var(--w-main))
     [main-end] 1fr
     [full-end];
   column-gap: 1rem;
