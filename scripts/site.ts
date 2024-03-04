@@ -1,1 +1,1 @@
-export const site = process.env.CF_PAGES ? process.env.CF_PAGES_URL : `http://localhost:4321`
+export const site = import.meta.env.CF_PAGES ? import.meta.env.CF_PAGES_URL : `http://localhost:4321`;
