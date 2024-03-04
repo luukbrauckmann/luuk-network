@@ -1,1 +1,3 @@
-export const site = import.meta.env.CF_PAGES ? import.meta.env.CF_PAGES_URL : `http://localhost:4321`;
+const { CF_PAGES, CF_PAGES_URL, PORT } = import.meta.env;
+
+export const site = CF_PAGES ? CF_PAGES_URL : `http://localhost:${PORT}`;

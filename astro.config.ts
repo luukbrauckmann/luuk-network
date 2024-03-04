@@ -3,6 +3,9 @@ import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
 import { site } from "./scripts/site.ts";
 
+console.log(import.meta.env);
+
+
 export default defineConfig({
   site,
   output: "hybrid",
