@@ -1,20 +1,3 @@
 {
-  "extends": "astro/tsconfigs/base",
-  "compilerOptions": {
-    "checkJs": true,
-    "baseUrl": "./",
-    "paths": {
-      "@assets/*": ["src/assets/*"],
-      "@components": ["src/components"],
-      "@components/*": ["src/components/*"],
-      "@layouts": ["src/layouts"],
-      "@layouts/*": ["src/layouts/*"],
-      "@lib": ["src/lib"],
-      "@lib/*": ["src/lib/*"],
-      "@pages/*": ["src/pages/*"],
-      "@styles": ["src/styles"],
-      "@styles/*": ["src/styles/*"]
-    },
-    "jsx": "preserve",
-  }
+  "extends": "astro/tsconfigs/strict"
 }

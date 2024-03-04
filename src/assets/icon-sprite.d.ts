@@ -1,1 +1,0 @@
-export type IconName = 'codepen' | 'discord' | 'en' | 'github' | 'home' | 'instagram' | 'linkedin' | 'magnifying-glass' | 'mastodon' | 'nl' | 'x';
