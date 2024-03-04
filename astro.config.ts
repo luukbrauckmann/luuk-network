@@ -6,7 +6,10 @@ import { site } from "./scripts/site.ts";
 export default defineConfig({
   site,
   output: "hybrid",
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    mode: "directory",
+    functionPerRoute: true,
+  }),
   image: {
     service: passthroughImageService(),
   },
