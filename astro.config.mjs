@@ -21,8 +21,8 @@ export default defineConfig({
             replacement: resolve('./src/', 'layouts')
           },
           {
-            find: '@styles',
-            replacement: resolve('./src/', 'styles')
+            find: '@assets',
+            replacement: resolve('./src/', 'assets')
           },
         ]
       })
