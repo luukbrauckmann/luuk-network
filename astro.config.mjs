@@ -8,13 +8,12 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: 'https://luukbrauckmann.dev/',
   output: "hybrid",
-  adapter: cloudflare({
-    mode: 'directory',
-    functionPerRoute: true,
-    wasmModuleImports: true
-  }),
+  adapter: cloudflare(),
   integrations: [sitemap()],
   image: {
     service: passthroughImageService(),
+  },
+  devToolbar: {
+    enabled: false,
   },
 });

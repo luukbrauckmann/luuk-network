@@ -1,3 +1,5 @@
+export const prerender = false;
+
 /**
  * @type {import('astro').APIRoute}
  * @typedef {import('astro').APIContext} context
