@@ -1,18 +1,20 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 import cloudflare from "@astrojs/cloudflare";
+import sitemap from "@astrojs/sitemap";
 
 /**
  * @type {import('astro').AstroUserConfig}
  */
-import sitemap from "@astrojs/sitemap";
-
-// https://astro.build/config
 export default defineConfig({
-  site: 'http://localhost:4321/',
+  site: 'https://luukbrauckmann.dev/',
   output: "hybrid",
   adapter: cloudflare({
+    mode: 'directory',
     functionPerRoute: true,
     wasmModuleImports: true
   }),
-  integrations: [sitemap()]
+  integrations: [sitemap()],
+  image: {
+    service: passthroughImageService(),
+  },
 });
