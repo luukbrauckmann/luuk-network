@@ -11,6 +11,7 @@ export default defineConfig({
   site: 'http://localhost:4321/',
   output: "hybrid",
   adapter: cloudflare({
+    functionPerRoute: true,
     wasmModuleImports: true
   }),
   integrations: [sitemap()]
