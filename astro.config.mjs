@@ -1,11 +1,15 @@
-import { defineConfig, passthroughImageService } from 'astro/config';
+import { defineConfig, passthroughImageService } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
-import alias from '@rollup/plugin-alias'
-import { resolve } from 'path'
+import graphql from "@rollup/plugin-graphql";
+import alias from "@rollup/plugin-alias";
+import { resolve } from "path";
+
+import { site } from "./scripts/site";
 
 export default defineConfig({
-  site: 'https://luukbrauckmann.dev/',
+  site,
+  server: { port: 4344 },
   output: "hybrid",
   adapter: cloudflare(),
   integrations: [sitemap()],
@@ -14,19 +18,28 @@ export default defineConfig({
   },
   vite: {
     plugins: [
+      graphql(),
       alias({
         entries: [
           {
-            find: '@layouts',
-            replacement: resolve('./src/', 'layouts')
+            find: "@layouts",
+            replacement: resolve("./src/", "layouts"),
           },
           {
-            find: '@assets',
-            replacement: resolve('./src/', 'assets')
+            find: "@assets",
+            replacement: resolve("./src/", "assets"),
           },
-        ]
-      })
-    ]
+          {
+            find: "@lib",
+            replacement: resolve("./src/", "lib"),
+          },
+          {
+            find: "@components",
+            replacement: resolve("./src/", "components"),
+          },
+        ],
+      }),
+    ],
   },
   devToolbar: {
     enabled: false,

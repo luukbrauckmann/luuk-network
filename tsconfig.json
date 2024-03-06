@@ -8,6 +8,10 @@
       "@layouts/*": ["./src/layouts/*"],
       "@assets": ["./src/assets"],
       "@assets/*": ["./src/assets/*"],
+      "@lib": ["./src/lib"],
+      "@lib/*": ["./src/lib/*"],
+      "@components": ["./src/components"],
+      "@components/*": ["./src/components/*"],
     }
   }
 }

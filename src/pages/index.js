@@ -10,7 +10,7 @@ export const GET = async () => {
     null, {
       status: 302,
       headers: {
-        location: '/en/'
+        location: '/nl/'
       }
     }
   );

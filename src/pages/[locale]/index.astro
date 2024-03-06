@@ -1,16 +1,20 @@
 ---
-import { Default } from '@layouts'
+import { Default } from '@layouts';
+import { datocms } from '@lib';
+import query from './index.graphql';
 
 export async function getStaticPaths() {
   return [
-    { params: { locale: 'en' } },
     { params: { locale: 'nl' } },
+    { params: { locale: 'en' } },
   ];
 }
 
 const { locale } = Astro.params;
+
+const { page } = await datocms.request(query, { locale })
 ---
 
 <Default>
-	<h1>{ locale === 'en' ? 'Welcome' : 'Welkom' }</h1>
+	<h1>{ page.title }</h1>
 </Default>

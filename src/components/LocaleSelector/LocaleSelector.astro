@@ -1,0 +1,14 @@
+---
+import { datocms } from "@lib";
+import query from "./LocaleSelector.graphql"
+
+const { site } = await datocms.request(query);
+---
+
+<ul>
+  {site.locales.map(locale => (
+    <li>
+      <a href={`/${locale}/`}>{locale}</a>
+    </li>
+  ))}
+</ul>

@@ -1,5 +1,6 @@
 ---
-import "@assets/css"
+import "@assets/css";
+import { LocaleSelector, ThemeSelector } from "@components";
 
 const { locale } = Astro.params;
 ---
@@ -21,6 +22,15 @@ const { locale } = Astro.params;
     <title>Luuk Brauckmann</title>
   </head>
   <body>
-    <slot />
+    <header>
+      <LocaleSelector />
+      <ThemeSelector />
+    </header>
+
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
+
+<script src="@assets/js/theme.js"></script>

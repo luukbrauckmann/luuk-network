@@ -1,0 +1,22 @@
+---
+const themes = [
+  { title: 'System', value: 'system' },
+  { title: 'Dark', value: 'dark' },
+  { title: 'Light', value: 'light' },
+];
+
+const { pathname } = Astro.url;
+
+---
+
+<theme-selector>
+  <ul>
+    { themes.map((theme) => 
+      <li>
+        <a href={`/api/theme?theme=${theme.value}&pathname=${pathname}`}>{ theme.title }</a>  
+      </li>
+    ) }
+  </ul>
+</theme-selector>
+
+<script src="./ThemeSelector.client.js"></script>
