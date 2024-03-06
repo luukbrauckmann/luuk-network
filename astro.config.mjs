@@ -4,9 +4,6 @@ import sitemap from "@astrojs/sitemap";
 import alias from '@rollup/plugin-alias'
 import { resolve } from 'path'
 
-/**
- * @type {import('astro').AstroUserConfig}
- */
 export default defineConfig({
   site: 'https://luukbrauckmann.dev/',
   output: "hybrid",
@@ -22,7 +19,11 @@ export default defineConfig({
           {
             find: '@layouts',
             replacement: resolve('./src/', 'layouts')
-          }
+          },
+          {
+            find: '@styles',
+            replacement: resolve('./src/', 'styles')
+          },
         ]
       })
     ]
