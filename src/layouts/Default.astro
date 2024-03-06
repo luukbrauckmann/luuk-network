@@ -15,14 +15,17 @@ const { locale } = Astro.params;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
+    <title>Luuk Brauckmann</title>
+    <meta name="description" content="Test test test test a11y SEO">
+
     <link rel="preload" href="/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/OpenSans-Italic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/PixelifySans.woff2" as="font" type="font/woff2" crossorigin>
-
-    <title>Luuk Brauckmann</title>
   </head>
   <body>
     <header>
+      <h2>Header/Nav</h2>
+
       <LocaleSelector />
       <ThemeSelector />
     </header>

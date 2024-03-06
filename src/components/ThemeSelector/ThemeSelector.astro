@@ -9,14 +9,33 @@ const { pathname } = Astro.url;
 
 ---
 
-<theme-selector>
-  <ul>
-    { themes.map((theme) => 
-      <li>
-        <a href={`/api/theme?theme=${theme.value}&pathname=${pathname}`}>{ theme.title }</a>  
-      </li>
-    ) }
-  </ul>
-</theme-selector>
+<nav aria-labelledby="theme-selector-label">
+  <h3 id="theme-selector-label" class="a11y">Themes</h3>
+
+  <theme-selector>
+    <ul class="theme-selector">
+      { themes.map((theme) => 
+        <li>
+          <a class="theme-selector__item"href={`/api/theme?theme=${theme.value}&pathname=${pathname}`}>{ theme.title }</a>  
+        </li>
+      ) }
+    </ul>
+  </theme-selector>
+</nav>
 
 <script src="./ThemeSelector.client.js"></script>
+
+<style>
+  .theme-selector {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .theme-selector__item {
+    display: inline-block;
+    padding: 1rem;
+  }
+</style>
