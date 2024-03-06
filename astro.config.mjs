@@ -13,6 +13,14 @@ export default defineConfig({
   image: {
     service: passthroughImageService(),
   },
+  vite: {
+    resolve: {
+      alias: {
+        "@layouts": "./src/layouts",
+        "@layouts/*": "./src/layouts/*",
+      }
+    }
+  },
   devToolbar: {
     enabled: false,
   },
