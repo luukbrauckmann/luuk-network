@@ -13,6 +13,11 @@ const { locale } = Astro.params;
     
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+
+    <link rel="preload" href="/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/OpenSans-Italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/PixelifySans.woff2" as="font" type="font/woff2" crossorigin>
+
     <title>Astro</title>
   </head>
   <body>

@@ -5,6 +5,7 @@
     "jsx": "preserve",
     "paths": {
       "@layouts": ["./src/layouts"],
+      "@layouts/*": ["./src/layouts/*"],
       "@assets": ["./src/assets"],
       "@assets/*": ["./src/assets/*"],
     }
