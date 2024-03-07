@@ -7,17 +7,18 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "sprite": "svg-sprite --symbol --symbol-dest='src/assets' --symbol-sprite=icon-sprite.svg src/assets/icons/*.svg"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^9.1.0",
     "@astrojs/sitemap": "^3.1.1",
     "astro": "^4.4.12",
-    "astro-icon": "^1.1.0",
     "graphql": "^16.8.1"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^5.1.0",
-    "@rollup/plugin-graphql": "^2.0.4"
+    "@rollup/plugin-graphql": "^2.0.4",
+    "svg-sprite": "^2.0.3"
   }
 }

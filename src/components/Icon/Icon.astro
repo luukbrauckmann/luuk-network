@@ -1,0 +1,16 @@
+---
+const { name, ...props } = Astro.props;
+---
+
+<svg {...props} aria-hidden data-icon={name}>
+  <use xlink:href={`#${name}`} />
+</svg>
+
+<style>
+  svg {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    color: currentColor;
+  }
+</style>

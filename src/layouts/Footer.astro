@@ -1,0 +1,26 @@
+---
+import { CopyLeft } from '@components';
+---
+
+<footer class="footer">
+  <div class="footer__content">
+    <CopyLeft />
+     2024 Luuk Brauckmann. All rights reserved.
+  </div>
+</footer>
+
+<style>
+  .footer {
+    grid-column: full;
+    background-color: #1b263b;
+
+    display: grid;
+    grid-template-columns: subgrid;
+
+    padding-block: 1.5rem;
+  }
+
+  .footer__content {
+    grid-column: main;
+  }
+</style>

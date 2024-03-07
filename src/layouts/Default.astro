@@ -1,6 +1,7 @@
 ---
 import "@assets/css";
-import { Header } from "@layouts";
+import { IconSprite } from "@components";
+import { Header, Footer } from "@layouts";
 
 const { locale } = Astro.params;
 ---
@@ -28,8 +29,9 @@ const { locale } = Astro.params;
     <main>
       <slot />
     </main>
+
+    <Footer />
+
+    <IconSprite />
   </body>
 </html>
-
-<style>
-</style>
