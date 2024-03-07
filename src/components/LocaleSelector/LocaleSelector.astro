@@ -31,11 +31,15 @@ const current = params.locale;
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 1rem;
   }
   
   .locale-selector__item {
-    display: inline-block;
-    padding: 1rem;
+    display: block;
+    padding: 1.5em;
+    line-height: 0;
+  }
+
+  .locale-selector__item[aria-current="page"] {
+    background-color: var(--c-highlight);
   }
 </style>

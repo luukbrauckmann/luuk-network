@@ -1,0 +1,43 @@
+---
+import { LocaleSelector, ThemeSelector } from "@components";
+import { Icon } from "astro-icon/components";
+
+const  { locale } = Astro.params
+---
+
+<header>
+  <div class="header__content">
+    <a href={`/${locale}/`}>
+      <Icon name="logo" height={48} width={48} />
+    </a>
+    <div class="logo">
+    </div>
+    <div class="config">
+      <LocaleSelector />
+      <ThemeSelector />
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    grid-column: full;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  .header__content {
+    grid-column: main;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    color: white;
+  }
+  
+  .config {
+    display: flex;
+  }
+</style>

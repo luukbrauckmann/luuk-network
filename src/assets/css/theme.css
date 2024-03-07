@@ -1,11 +1,35 @@
-[data-theme="system"] {
-  color-scheme: light dark;
+:root[data-theme="system"] {
+  color-scheme: dark light;
 }
 
-[data-theme="dark"] {
+:root[data-theme="dark"] {
   color-scheme: dark;
+
+  --c-background: #0D1B2A;
+  --c-highlight: #5979B3;
 }
 
-[data-theme="light"] {
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-background: #0D1B2A;
+    --c-highlight: #5979B3;
+  }
+}
+
+:root[data-theme="light"] {
   color-scheme: light;
+
+  --c-background: #FFFFFF;
+  --c-highlight: #C4CFE4;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --c-background: #FFFFFF;
+    --c-highlight: #C4CFE4;
+  }
+}
+
+body {
+  background-color: var(--c-background);
 }

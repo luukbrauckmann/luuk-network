@@ -7,10 +7,10 @@ Sitemap: ${new URL('sitemap-index.xml', import.meta.env.SITE).href}
 
 /**
  * @type {import('astro').APIRoute}
- * @typedef {import('astro').APIContext} context
+ * @param {import('astro').APIContext} context
  * @returns {Response}
  */
-export const GET = () => {
+export const GET = (context) => {
   return new Response(
     robotsTxt, {
       headers: {

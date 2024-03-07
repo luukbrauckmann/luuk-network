@@ -1,15 +1,13 @@
 ---
-import { theme } from '@assets/js'
-import { Icon } from 'astro-icon/components'
+import { Icon } from "astro-icon/components";
 
 const themes = [
-  { title: 'System', icon: 'desktop', value: 'system' },
-  { title: 'Dark', icon: 'moon', value: 'dark' },
-  { title: 'Light', icon: 'sun', value: 'light' },
+  { title: "System", icon: "desktop", value: "system" },
+  { title: "Dark", icon: "moon", value: "dark" },
+  { title: "Light", icon: "sun", value: "light" },
 ];
 
 const { pathname } = Astro.url;
-
 ---
 
 <nav aria-labelledby="theme-selector-label">
@@ -17,19 +15,24 @@ const { pathname } = Astro.url;
 
   <theme-selector>
     <form class="theme-selector">
-      { themes.map((theme) => 
-        <div class="theme-selector__item">
-          <label for={theme.value}>
-            <span class="a11y">{ theme.title }</span>
+      {
+        themes.map((theme) => (
+          <label class="theme-selector__item">
+            <span class="a11y">{theme.title}</span>
             <Icon name={theme.icon} />
+
+            <input
+              type="radio"
+              name="theme"
+              id={theme.value}
+              value={theme.value}
+            />
           </label>
-          <input type="radio" name="theme" id={theme.value} value={theme.value} />
-        </div>
-      ) }
+        ))
+      }
     </form>
   </theme-selector>
 </nav>
-
 
 <script src="./ThemeSelector.client.js"></script>
 
@@ -39,11 +42,23 @@ const { pathname } = Astro.url;
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 1rem;
   }
 
   .theme-selector__item {
-    display: flex;
-    align-items: center;
+    position: relative;
+    line-height: 0;
+    padding: 1.5em;
+  }
+
+  .theme-selector__item input {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .theme-selector__item:has(input:checked) {
+    background-color: var(--c-highlight);
   }
 </style>
