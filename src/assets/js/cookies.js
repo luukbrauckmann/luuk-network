@@ -1,20 +1,47 @@
 /**
+ * Cookie type definition
  * 
- * @param {string} name 
- * @returns {string}
+ * @typedef {Object} Cookie
+ * @property {string} name
+ * @property {*} value
+ * @property {string} [domain]
+ * @property {string} [expires]
+ * @property {string} [maxAge]
+ * @property {string} [path]
+ * @property {boolean} [samesite]
+ * @property {boolean} [secure]
  */
-export const get = (name) => {
-  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-  if (match) return match[2];
-}
 
 /**
  * 
- * @param {string} name 
- * @param {*} value 
- * @returns {string}
+ * @param {Cookie["name"]} name 
+ * @returns {Cookie}
  */
-export const set = (name, value) => {
-  console.log(name, value);
-  return get(name);
+export const get = (name) => {
+  const rawCookie = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`))[0].split('=');
+
+  if (!rawCookie) return;
+
+  let cookie = {
+    name: rawCookie[0],
+    value: rawCookie[1],
+  }
+
+  return cookie;
+}
+
+/**
+ * @param {Cookie} cookie 
+ * @returns {Cookie}
+ */
+export const set = (cookie) => {
+  console.log(cookie);
+
+  document.cookie = `
+    ${cookie.name}=${JSON.stringify(cookie.value)};
+  `;
+
+  console.log(document.cookie);
+
+  return get(cookie.name);
 }

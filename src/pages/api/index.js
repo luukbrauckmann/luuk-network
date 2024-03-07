@@ -7,9 +7,9 @@ export const prerender = false;
  */
 export const GET = async () => {
   return new Response(
-    null, {
-      status: 200,
-      statusText: 'Hey there!'
+    'Beep boop! 👋 This is a response from space.', 
+    {
+      status: 200
     }
   );
 };

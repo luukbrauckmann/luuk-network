@@ -1,28 +1,20 @@
 import { theme } from '@assets/js';
 
 class ThemeSelector extends HTMLElement {
-  /** @typedef {'system' | 'dark' | 'light'} selectedTheme */
-  // selectedTheme = cookies.get('theme') || 'system';
+  form = this.querySelector('form');
 
   constructor() {
     super();
-
-    
-    // console.log(this.selectedTheme);
-    
-    const links = this.querySelectorAll('a');
-
-    links.forEach(link => link.addEventListener('click', this.changeTheme));
   }
 
-  changeTheme = async (event) => {
-    const { target } = event;
+  connectedCallback() {
+    theme.set();
+    this.form.elements[theme.get()].checked = true;
 
-    event.preventDefault();
-    
-    const response = await fetch(`${target.href}&redirect=false`);
-    
-    theme.reload();
+    this.form.onchange = (event) => {
+      const { value } = event.target;
+      theme.set(value);
+    };
   }
 }
 

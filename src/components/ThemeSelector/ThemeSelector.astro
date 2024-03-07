@@ -1,8 +1,11 @@
 ---
+import { theme } from '@assets/js'
+import { Icon } from 'astro-icon/components'
+
 const themes = [
-  { title: 'System', value: 'system' },
-  { title: 'Dark', value: 'dark' },
-  { title: 'Light', value: 'light' },
+  { title: 'System', icon: 'desktop', value: 'system' },
+  { title: 'Dark', icon: 'moon', value: 'dark' },
+  { title: 'Light', icon: 'sun', value: 'light' },
 ];
 
 const { pathname } = Astro.url;
@@ -13,15 +16,20 @@ const { pathname } = Astro.url;
   <h3 id="theme-selector-label" class="a11y">Themes</h3>
 
   <theme-selector>
-    <ul class="theme-selector">
+    <form class="theme-selector">
       { themes.map((theme) => 
-        <li>
-          <a class="theme-selector__item"href={`/api/theme?theme=${theme.value}&pathname=${pathname}`}>{ theme.title }</a>  
-        </li>
+        <div class="theme-selector__item">
+          <label for={theme.value}>
+            <span class="a11y">{ theme.title }</span>
+            <Icon name={theme.icon} />
+          </label>
+          <input type="radio" name="theme" id={theme.value} value={theme.value} />
+        </div>
       ) }
-    </ul>
+    </form>
   </theme-selector>
 </nav>
+
 
 <script src="./ThemeSelector.client.js"></script>
 
@@ -35,7 +43,7 @@ const { pathname } = Astro.url;
   }
 
   .theme-selector__item {
-    display: inline-block;
-    padding: 1rem;
+    display: flex;
+    align-items: center;
   }
 </style>

@@ -2,7 +2,12 @@
 import { datocms } from "@lib";
 import query from "./LocaleSelector.graphql"
 
+import { Icon } from 'astro-icon/components'
+
 const { site } = await datocms.request(query);
+
+const { params } = Astro;
+const current = params.locale;
 ---
 
 <nav aria-labelledby="locale-selector-label">
@@ -11,7 +16,10 @@ const { site } = await datocms.request(query);
   <ul class="locale-selector">
     {site.locales.map(locale => (
       <li>
-        <a class="locale-selector__item" href={`/${locale}/`}>{locale}</a>
+        <a class="locale-selector__item" href={`/${locale}/`} aria-current={ current === locale ? 'page' : undefined }>
+          <span class="a11y">{ locale }</span>
+          <Icon name={locale} />
+        </a>
       </li>
     ))}
   </ul>
