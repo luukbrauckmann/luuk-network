@@ -6,6 +6,7 @@
   color-scheme: dark;
 
   --c-background: #0D1B2A;
+  --c-foreground: #1B263B;
   --c-highlight: #5979B3;
   --c-text: #FFFFFF;
 }
@@ -13,6 +14,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --c-background: #0D1B2A;
+    --c-foreground: #1B263B;
     --c-highlight: #5979B3;
     --c-text: #FFFFFF;
   }
@@ -22,6 +24,7 @@
   color-scheme: light;
 
   --c-background: #FFFFFF;
+  --c-foreground: #E0E1DD;
   --c-highlight: #C4CFE4;
   --c-text: #000000;
 }
@@ -29,6 +32,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --c-background: #FFFFFF;
+    --c-foreground: #E0E1DD;
     --c-highlight: #C4CFE4;
     --c-text: #000000;
   }
