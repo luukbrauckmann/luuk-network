@@ -20,21 +20,24 @@ export default defineConfig({
     service: passthroughImageService()
   },
   vite: {
-    plugins: [graphql(), alias({
-      entries: [{
-        find: "@layouts",
-        replacement: resolve("./src/", "layouts")
-      }, {
-        find: "@assets",
-        replacement: resolve("./src/", "assets")
-      }, {
-        find: "@lib",
-        replacement: resolve("./src/", "lib")
-      }, {
-        find: "@components",
-        replacement: resolve("./src/", "components")
-      }]
-    })]
+    plugins: [
+      graphql(), 
+      alias({
+        entries: [{
+          find: "@layouts",
+          replacement: resolve("./src/", "layouts")
+        }, {
+          find: "@assets",
+          replacement: resolve("./src/", "assets")
+        }, {
+          find: "@lib",
+          replacement: resolve("./src/", "lib")
+        }, {
+          find: "@components",
+          replacement: resolve("./src/", "components")
+        }]
+      })
+    ]
   },
   devToolbar: {
     enabled: false
