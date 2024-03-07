@@ -5,7 +5,6 @@ import graphql from "@rollup/plugin-graphql";
 import alias from "@rollup/plugin-alias";
 import { resolve } from "path";
 import { site } from "./scripts/site";
-import icon from "astro-icon";
 
 export default defineConfig({
   site,
@@ -15,10 +14,7 @@ export default defineConfig({
   output: "hybrid",
   adapter: cloudflare(),
   integrations: [
-    sitemap(), 
-    icon({
-      iconDir: "./src/assets/icons",
-    })
+    sitemap()
   ],
   image: {
     service: passthroughImageService()
