@@ -1,5 +1,5 @@
 ---
-import { LocaleSelector, ThemeSelector } from "@components";
+import { LocaleSelector, Nav, ThemeSelector } from "@components";
 import { Icon } from "astro-icon/components";
 
 const  { locale } = Astro.params
@@ -7,11 +7,14 @@ const  { locale } = Astro.params
 
 <header>
   <div class="header__content">
-    <a href={`/${locale}/`}>
+    <a class="logo" href={`/${locale}/`}>
       <Icon name="logo" height={48} width={48} />
     </a>
-    <div class="logo">
+
+    <div class="nav">
+      <Nav />
     </div>
+    
     <div class="config">
       <LocaleSelector />
       <ThemeSelector />
@@ -31,10 +34,11 @@ const  { locale } = Astro.params
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
   }
 
-  .logo {
-    color: white;
+  .nav {
+    flex: 1;
   }
   
   .config {

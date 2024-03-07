@@ -1,0 +1,49 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<nav>
+  <ul class="nav-list">
+    <li>
+      <a class="nav-list__item" href="/">
+        <Icon name="home" />
+        <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a class="nav-list__item" href="/">
+        <Icon name="person-secret" />
+        <span>Me myself & I</span>
+      </a>
+    </li>
+    <li>
+      <a class="nav-list__item" href="/">
+        <Icon name="newspaper" />
+        <span>Blog</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .nav-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  .nav-list__item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--c-text);
+    gap: 1ch;
+    padding: 1em;
+    transition: 0.2s;
+  }
+
+  .nav-list__item:hover {
+    background-color: var(--c-highlight);
+  }
+
+</style>
