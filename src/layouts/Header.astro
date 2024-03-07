@@ -9,7 +9,7 @@ const  { locale } = Astro.params
   <div class="header__content">
     <a class="logo" href={`/${locale}/`}>
       <span class="a11y">Home</span>
-      <Icon name="logo" height={56} width={56} />
+      <Icon name="logo" size="3em" />
     </a>
 
     <div class="nav">
@@ -36,6 +36,11 @@ const  { locale } = Astro.params
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+  }
+
+  .logo {
+    color: var(--c-text);
+    line-height: 0;
   }
 
   .nav {

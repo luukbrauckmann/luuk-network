@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "sprite": "svg-sprite --symbol --symbol-dest='src/assets' --symbol-sprite=icon-sprite.svg src/assets/icons/*.svg"
+    "icons": "svg-sprite --symbol --symbol-dest='src/assets/icon-sprite' --symbol-sprite=icon-sprite.svg src/assets/icons/*.svg && node scripts/icon-types.js"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^9.1.0",
