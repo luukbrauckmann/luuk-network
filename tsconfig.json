@@ -1,3 +1,16 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "paths": {
+      "@blocks": ["./src/blocks"],
+      "@blocks/*": ["./src/blocks/*"],
+      "@components": ["./src/components"],
+      "@components/*": ["./src/components/*"],
+      "@layouts": ["./src/layouts"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@lib": ["./src/lib"],
+      "@lib/*": ["./src/lib/*"],
+    },
+    "jsx": "preserve"
+  }
 }

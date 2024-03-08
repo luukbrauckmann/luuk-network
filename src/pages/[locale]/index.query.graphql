@@ -1,0 +1,13 @@
+query HomeQuery($locale: SiteLocale) {
+  page: home(locale: $locale) {
+    body {
+      __typename
+      ... on HeroRecord {
+        title {
+          value
+        }
+      }
+    }
+    title
+  }
+}
