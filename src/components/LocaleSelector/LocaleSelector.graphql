@@ -1,5 +1,0 @@
-query SiteLocales {
-  site: _site {
-    locales
-  }
-}

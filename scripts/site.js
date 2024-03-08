@@ -1,1 +1,0 @@
-export const site = process.env.CF_PAGES ? process.env.CF_PAGES_URL : `http://localhost:4344`;

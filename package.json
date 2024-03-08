@@ -1,24 +1,17 @@
 {
-  "name": "luukbrauckmann",
+  "name": "",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "icons": "svg-sprite --symbol --symbol-dest='src/assets/icon-sprite' --symbol-sprite=icon-sprite.svg src/assets/icons/*.svg && node scripts/icon-types.js"
+    "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^9.1.0",
-    "@astrojs/sitemap": "^3.1.1",
-    "astro": "^4.4.12",
-    "graphql": "^16.8.1"
-  },
-  "devDependencies": {
-    "@rollup/plugin-alias": "^5.1.0",
-    "@rollup/plugin-graphql": "^2.0.4",
-    "svg-sprite": "^2.0.3"
+    "astro": "^4.4.15",
+    "@astrojs/check": "^0.5.6",
+    "typescript": "^5.4.2"
   }
 }
