@@ -35,13 +35,7 @@ export const get = (name) => {
  * @returns {Cookie}
  */
 export const set = (cookie) => {
-  console.log(cookie);
-
-  document.cookie = `
-    ${cookie.name}=${JSON.stringify(cookie.value)};
-  `;
-
-  console.log(document.cookie);
+  document.cookie = `${cookie.name}=${cookie.value};`;
 
   return get(cookie.name);
 }

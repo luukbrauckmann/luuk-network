@@ -7,7 +7,12 @@ export const get = () => {
 }
 
 /** @param {'system' | 'dark' | 'light'} value */
-export const set = (value = defaultTheme) => {
+export const set = (value) => {
+  if (!value) {
+    const cookie = cookies.get('theme');
+    if (cookie) value = cookie.value;
+    else value = defaultTheme;
+  }
   const cookie = {
     name: 'theme',
     value,
