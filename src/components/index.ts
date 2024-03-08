@@ -1,0 +1,1 @@
+export { default as CopyLeft } from "./CopyLeft/CopyLeft.astro";

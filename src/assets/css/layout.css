@@ -1,0 +1,11 @@
+body {
+  display: grid;
+  grid-template-columns: [full-start] 1fr [main-start] minmax(0px, 1200px) [main-end] 1fr [full-end];
+  grid-template-rows: auto 1fr auto;
+  column-gap: 1rem;
+  min-height: 100dvh;
+}
+
+body > * {
+  grid-column: main;
+}

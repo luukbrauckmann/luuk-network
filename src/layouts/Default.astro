@@ -1,19 +1,36 @@
 ---
+import "@assets/css";
+import { Footer, Header } from "@layouts";
+
+
 const { locale } = Astro.params;
 ---
 
 
-<html lang={locale}>
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+<html lang={locale} data-theme="system">
+  <head>
+    <meta charset="utf-8" />
+
+    <link media="(prefers-color-scheme: dark)" rel="icon" type="image/svg+xml" href="/favicon-dark.svg" />
+    <link media="(prefers-color-scheme: light)" rel="icon" type="image/svg+xml" href="/favicon-light.svg" />
     
-    <meta name="description" content="Hoi">
-		<title>Luuk Brauckmann</title>
-	</head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>Luuk Brauckmann</title>
+    <meta name="description" content="Test test test test a11y SEO">
+
+    <link rel="preload" href="/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/OpenSans-Italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/PixelifySans.woff2" as="font" type="font/woff2" crossorigin>
+  </head>
 	<body>
-		<slot />
+    <Header />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
 	</body>
 </html>

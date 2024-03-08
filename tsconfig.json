@@ -2,6 +2,8 @@
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "paths": {
+      "@assets": ["./src/assets"],
+      "@assets/*": ["./src/assets/*"],
       "@blocks": ["./src/blocks"],
       "@blocks/*": ["./src/blocks/*"],
       "@components": ["./src/components"],
