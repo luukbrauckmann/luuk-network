@@ -9,37 +9,44 @@ import { site } from "./scripts/site";
 export default defineConfig({
   site,
   server: {
-    port: 4344
+    port: 4344,
   },
   output: "hybrid",
   adapter: cloudflare(),
-  integrations: [
-    sitemap()
-  ],
+  integrations: [sitemap()],
   image: {
-    service: passthroughImageService()
+    service: passthroughImageService(),
   },
   vite: {
     plugins: [
-      graphql(), 
+      graphql(),
       alias({
-        entries: [{
-          find: "@layouts",
-          replacement: resolve("./src/", "layouts")
-        }, {
-          find: "@assets",
-          replacement: resolve("./src/", "assets")
-        }, {
-          find: "@lib",
-          replacement: resolve("./src/", "lib")
-        }, {
-          find: "@components",
-          replacement: resolve("./src/", "components")
-        }]
-      })
-    ]
+        entries: [
+          {
+            find: "@assets",
+            replacement: resolve("./src/", "assets"),
+          },
+          {
+            find: "@blocks",
+            replacement: resolve("./src/", "blocks"),
+          },
+          {
+            find: "@components",
+            replacement: resolve("./src/", "components"),
+          },
+          {
+            find: "@layouts",
+            replacement: resolve("./src/", "layouts"),
+          },
+          {
+            find: "@lib",
+            replacement: resolve("./src/", "lib"),
+          },
+        ],
+      }),
+    ],
   },
   devToolbar: {
-    enabled: false
-  }
+    enabled: false,
+  },
 });

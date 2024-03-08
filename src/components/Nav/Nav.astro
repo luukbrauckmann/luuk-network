@@ -28,8 +28,15 @@ import { Icon } from '@components'
 <style>
   .nav-list {
     display: flex;
+    flex-direction: column;
     list-style: none;
     padding: 0;
+  }
+
+  @media (min-width: 768px) {
+    .nav-list {
+      flex-direction: row;
+    }
   }
 
   .nav-list__item {
@@ -38,7 +45,7 @@ import { Icon } from '@components'
     text-decoration: none;
     color: var(--c-text);
     gap: 1ch;
-    padding: 1.5em 2em;
+    padding: 1.5em;
     transition: 0.2s;
     line-height: 0;
   }

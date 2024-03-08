@@ -34,8 +34,15 @@ const  { locale } = Astro.params
     grid-column: main;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     gap: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .header__content {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   .logo {
@@ -49,5 +56,12 @@ const  { locale } = Astro.params
   
   .config {
     display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    .config {
+      flex-direction: row;
+    }
   }
 </style>

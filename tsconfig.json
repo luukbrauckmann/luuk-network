@@ -4,14 +4,16 @@
     "checkJs": true,
     "jsx": "preserve",
     "paths": {
-      "@layouts": ["./src/layouts"],
-      "@layouts/*": ["./src/layouts/*"],
       "@assets": ["./src/assets"],
       "@assets/*": ["./src/assets/*"],
-      "@lib": ["./src/lib"],
-      "@lib/*": ["./src/lib/*"],
+      "@blocks": ["./src/blocks"],
+      "@blocks/*": ["./src/blocks/*"],
       "@components": ["./src/components"],
       "@components/*": ["./src/components/*"],
+      "@layouts": ["./src/layouts"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@lib": ["./src/lib"],
+      "@lib/*": ["./src/lib/*"],
     }
   }
 }
