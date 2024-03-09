@@ -1,0 +1,24 @@
+---
+import type { Name } from '@assets/icon-sprite/icon-sprite'
+interface Props {
+  name: Name;
+  size?: string;
+  [x:string]: any;
+}
+const { name, size = '1em', ...props } = Astro.props;
+---
+
+<svg {...props} aria-hidden data-icon={name}>
+  <use xlink:href={`#${name}`} />
+</svg>
+
+<style define:vars={{
+  size
+}}>
+  svg {
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    color: currentColor;
+  }
+</style>

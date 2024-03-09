@@ -1,6 +1,4 @@
 ---
-export const prerender = true
-
 import { Default } from '@layouts';
 import { datocms } from '@lib';
 import query from './index.query.graphql';
@@ -11,7 +9,6 @@ export async function getStaticPaths() {
     { params: { locale: 'en' } },
   ];
 }
-
 const { locale } = Astro.params;
 
 const { page } = await datocms.request(query, { locale })
