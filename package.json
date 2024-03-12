@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^5.1.0",
-    "@rollup/plugin-graphql": "^2.0.4"
+    "@rollup/plugin-graphql": "^2.0.4",
+    "@types/node": "^20.11.26"
   }
 }
