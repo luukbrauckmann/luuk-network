@@ -1,11 +1,11 @@
+#import '@blocks/Hero/Hero.fragment.graphql'
+
 query HomeQuery($locale: SiteLocale) {
   page: home(locale: $locale) {
     body {
       __typename
       ... on HeroRecord {
-        title {
-          value
-        }
+        ...Hero
       }
     }
     title

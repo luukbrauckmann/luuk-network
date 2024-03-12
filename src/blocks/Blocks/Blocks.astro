@@ -1,0 +1,18 @@
+---
+const blockFiles = await Astro.glob("@blocks/**/*.astro");
+const { blocks } = Astro.props;
+---
+
+{
+  blocks.map((block: any) => {
+    const BlockElement = blockFiles.find((blockFile) =>
+      blockFile.file.includes(block.__typename.split("Record").pop())
+    );
+
+    if (BlockElement) {
+      return <BlockElement.default {...block} />;
+    } else {
+      return <p>Block not found</p>;
+    }
+  })
+}
