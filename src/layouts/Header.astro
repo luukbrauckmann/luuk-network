@@ -1,7 +1,16 @@
 ---
-import { Icon } from "@components"
+import { Icon, LocaleSelector } from "@components"
 ---
 
-<header>
+<header class="main-header">
   <Icon name="logo" size="5rem" />
+  <LocaleSelector />
 </header>
+
+<style>
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
