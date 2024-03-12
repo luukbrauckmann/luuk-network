@@ -1,3 +1,5 @@
+export const prerender = false;
+
 export const GET = async () => {
   return new Response(
     'Beep boop! 👋 This is a response from space.', 
