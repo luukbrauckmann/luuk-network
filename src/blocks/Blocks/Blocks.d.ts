@@ -1,3 +1,1 @@
-import { HeroFragment } from '@lib/types/datocms';
-
-export type AnyBlock = HeroFragment;
+export type Block = 'Blocks' | 'BlocksRecord' | 'Hero' | 'HeroRecord' | 'NotFound' | 'NotFoundRecord';

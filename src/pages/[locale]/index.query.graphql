@@ -7,6 +7,9 @@ query HomeQuery($locale: SiteLocale) {
       ... on HeroRecord {
         ...Hero
       }
+      ... on TestRecord {
+        id
+      }
     }
     title
   }

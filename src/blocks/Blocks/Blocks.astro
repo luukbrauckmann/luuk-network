@@ -1,4 +1,11 @@
 ---
+import { NotFound } from '@blocks';
+import type { Block } from './Blocks';
+
+interface Props {
+  blocks: Block[];
+}
+
 const blockFiles = await Astro.glob("@blocks/**/*.astro");
 const { blocks } = Astro.props;
 ---
@@ -12,7 +19,7 @@ const { blocks } = Astro.props;
     if (BlockElement) {
       return <BlockElement.default {...block} />;
     } else {
-      return <p>Block not found</p>;
+      return <NotFound {block} />;
     }
   })
 }

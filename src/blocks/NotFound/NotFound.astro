@@ -1,0 +1,11 @@
+---
+const { block } = Astro.props
+---
+
+<div class="not-found-block">
+  <pre>{ JSON.stringify(block, null, 2) }</pre>
+</div>
+
+<script is:inline>
+  console.warn(`Block not found`);
+</script>
