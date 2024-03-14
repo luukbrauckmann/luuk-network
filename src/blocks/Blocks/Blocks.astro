@@ -6,7 +6,7 @@ const { blocks } = Astro.props;
 {
   blocks.map((block: any) => {
     const BlockElement = blockFiles.find((blockFile) =>
-      blockFile.file.includes(block.__typename.split("Record").pop())
+      blockFile.file.includes(block.__typename.replace("Record", ""))
     );
 
     if (BlockElement) {
