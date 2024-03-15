@@ -1,12 +1,38 @@
 ---
-
+import { Icon } from "@components";
 ---
 
-<ul>
+<ul class="locale-selector">
   <li>
-    <a href="/nl/">NL</a>
+    <a class="locale-selector__item" href="/nl/">
+      <Icon name="nl" size="2em"/>
+    </a>
   </li>
   <li>
-    <a href="/en/">EN</a>
+    <a class="locale-selector__item" href="/en/">
+      <Icon name="en" size="2em"/>
+    </a>
   </li>
 </ul>
+
+<style>
+  .locale-selector {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+  }
+
+  .locale-selector__item {
+    display: inline-block;
+    padding: 1em;
+    text-decoration: none;
+    color: inherit;
+    line-height: 0;
+  }
+
+  .locale-selector__item:hover {
+    text-decoration: underline;
+    background-color: #5979B3;
+  }
+</style>
