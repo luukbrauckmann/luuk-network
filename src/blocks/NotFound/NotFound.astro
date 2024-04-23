@@ -1,11 +1,10 @@
 ---
-const { block } = Astro.props
+interface Props {
+  __typename: string;
+}
+const { __typename } = Astro.props;
 ---
 
-<div class="not-found-block">
-  <pre>{ JSON.stringify(block, null, 2) }</pre>
-</div>
-
-<script is:inline>
-  console.warn(`Block not found`);
+<script is:inline define:vars={{ typename: __typename }}>
+  console.warn(`${typename} not found`);
 </script>

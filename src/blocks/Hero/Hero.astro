@@ -1,6 +1,8 @@
 ---
-const props = Astro.props;
+import { StructuredText } from "@components";
+const { title } = Astro.props;
 ---
+
 <div class="hero-block">
-  <pre>{ JSON.stringify(props, null, 2) }</pre>
+  <StructuredText {...title} />
 </div>

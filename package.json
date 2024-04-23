@@ -15,6 +15,7 @@
     "@astrojs/cloudflare": "^9.1.0",
     "@rive-app/canvas": "^2.10.4",
     "astro": "^4.4.15",
+    "datocms-structured-text-to-html-string": "^3.0.0",
     "typescript": "^5.4.2"
   },
   "devDependencies": {

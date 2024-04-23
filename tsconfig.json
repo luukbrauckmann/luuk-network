@@ -12,8 +12,8 @@
       "@layouts": ["./src/layouts"],
       "@layouts/*": ["./src/layouts/*"],
       "@lib": ["./src/lib"],
-      "@lib/*": ["./src/lib/*"],
+      "@lib/*": ["./src/lib/*"]
     },
-    "jsx": "preserve"
+    "checkJs": true
   }
 }
