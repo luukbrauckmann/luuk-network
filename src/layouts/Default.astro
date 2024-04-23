@@ -1,38 +1,31 @@
 ---
 import "@assets/css";
 import { Footer, Header } from "@layouts";
-import { IconSprite } from "@components";
+import { IconSprite, Preload, Seo } from "@components";
 
 const { locale } = Astro.params;
+const { app, site, page } = Astro.props;
 ---
-
 
 <html lang={locale} data-theme="system">
   <head>
     <meta charset="utf-8" />
-
-    <link media="(prefers-color-scheme: dark)" rel="icon" type="image/svg+xml" href="/favicon-dark.svg" />
-    <link media="(prefers-color-scheme: light)" rel="icon" type="image/svg+xml" href="/favicon-light.svg" />
-    
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
-    <title>Luuk Brauckmann</title>
-    <meta name="description" content="Test test test test a11y SEO">
+    <Seo tags={[...site.faviconMetaTags, ...page._seoMetaTags]} />
 
-    <link rel="preload" href="/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/OpenSans-Italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/PixelifySans.woff2" as="font" type="font/woff2" crossorigin>
+    <Preload />
   </head>
-	<body>
-    <Header />
+  <body>
+    <Header nav={app.nav} />
 
-    <main>
+    <main class="body__main">
       <slot />
     </main>
 
     <Footer />
 
     <IconSprite />
-	</body>
+  </body>
 </html>

@@ -8,19 +8,14 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "types": "jiti scripts/types"
+    "types": "node scripts/types"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.6",
     "@astrojs/cloudflare": "^9.1.0",
-    "@rive-app/canvas": "^2.10.4",
     "astro": "^4.4.15",
-    "datocms-structured-text-to-html-string": "^3.0.0",
-    "typescript": "^5.4.2"
+    "datocms-structured-text-to-html-string": "^3.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-graphql": "^2.0.4",
-    "@types/node": "^20.11.26",
-    "jiti": "^1.21.0"
+    "@rollup/plugin-graphql": "^2.0.4"
   }
 }

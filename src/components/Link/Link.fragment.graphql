@@ -1,0 +1,14 @@
+fragment Link on LinkRecord {
+  title
+  icon
+  link {
+    __typename
+    ... on PageRecord {
+      id
+      slug
+    }
+    ... on HomeRecord {
+      id
+    }
+  }
+}

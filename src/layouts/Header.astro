@@ -1,16 +1,24 @@
 ---
-import { Icon, LocaleSelector } from "@components"
+import { Icon, LocaleSelector, Nav } from "@components";
+
+const { nav } = Astro.props;
 ---
 
-<header class="main-header">
-  <Icon name="logo" size="5rem" />
+<header class="body__header">
+  <Icon name="logo" size="3rem" />
+  <Nav items={nav} />
   <LocaleSelector />
 </header>
 
 <style>
-  .main-header {
+  .body__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .body__header > :global(:nth-child(2)) {
+    flex: 1;
+    margin-inline: 1rem;
   }
 </style>

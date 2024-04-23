@@ -1,0 +1,5 @@
+query SiteQuery {
+  site: _site {
+    locales
+  }
+}

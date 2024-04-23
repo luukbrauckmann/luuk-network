@@ -1,0 +1,14 @@
+query allPages {
+  nl: allPages(locale: nl) {
+    slug
+    parentPage {
+      slug
+    }
+  }
+  en: allPages(locale: en) {
+    slug
+    parentPage {
+      slug
+    }
+  }
+}

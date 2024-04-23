@@ -1,16 +1,16 @@
 ---
-import { CopyLeft } from '@components';
+import { CopyLeft } from "@components";
 ---
 
-<footer class="footer">
-  <div class="footer__content">
+<footer class="body__footer">
+  <div>
     <CopyLeft />
-     2024 Luuk Brauckmann. All rights reserved.
+    2024 Luuk Brauckmann. All rights reserved.
   </div>
 </footer>
 
 <style>
-  .footer {
+  .body__footer {
     grid-column: full;
     background-color: var(--c-foreground);
 
@@ -20,7 +20,7 @@ import { CopyLeft } from '@components';
     padding-block: 1.5rem;
   }
 
-  .footer__content {
+  .body__footer > * {
     grid-column: main;
   }
 </style>

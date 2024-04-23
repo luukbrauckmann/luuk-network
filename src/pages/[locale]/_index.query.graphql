@@ -1,0 +1,31 @@
+#import '@blocks/Hero/Hero.fragment.graphql'
+#import '@components/Link/Link.fragment.graphql'
+
+query HomeQuery($locale: SiteLocale) {
+  app(locale: $locale) {
+    nav {
+      ...Link
+    }
+  }
+  site: _site(locale: $locale) {
+    faviconMetaTags(variants: [icon, appleTouchIcon, msApplication]) {
+      attributes
+      content
+      tag
+    }
+  }
+  page: home(locale: $locale) {
+    _seoMetaTags {
+      attributes
+      content
+      tag
+    }
+    body {
+      __typename
+      ... on HeroRecord {
+        ...Hero
+      }
+    }
+    title
+  }
+}
