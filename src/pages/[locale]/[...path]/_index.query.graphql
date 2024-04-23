@@ -1,4 +1,6 @@
 #import '@blocks/Hero/Hero.fragment.graphql'
+#import '@blocks/Title/Title.fragment.graphql'
+
 #import '@components/Link/Link.fragment.graphql'
 
 query PageQuery($locale: SiteLocale, $slug: String) {
@@ -24,6 +26,9 @@ query PageQuery($locale: SiteLocale, $slug: String) {
       __typename
       ... on HeroRecord {
         ...Hero
+      }
+      ... on TitleRecord {
+        ...Title
       }
     }
     title

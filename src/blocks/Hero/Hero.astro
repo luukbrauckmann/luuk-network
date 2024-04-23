@@ -9,10 +9,12 @@ const { title } = Astro.props;
 
 <style>
   .hero-block {
-    margin-block-start: 4rem;
-    padding-block-start: -4rem;
+    margin-block-start: -4rem;
+    padding-block-start: 4rem;
     height: 100dvh;
     display: flex;
     align-items: center;
+    z-index: -1;
+    position: relative;
   }
 </style>

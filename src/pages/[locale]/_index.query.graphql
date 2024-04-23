@@ -1,4 +1,6 @@
 #import '@blocks/Hero/Hero.fragment.graphql'
+#import '@blocks/Title/Title.fragment.graphql'
+
 #import '@components/Link/Link.fragment.graphql'
 
 query HomeQuery($locale: SiteLocale) {
@@ -24,6 +26,9 @@ query HomeQuery($locale: SiteLocale) {
       __typename
       ... on HeroRecord {
         ...Hero
+      }
+      ... on TitleRecord {
+        ...Title
       }
     }
     title
