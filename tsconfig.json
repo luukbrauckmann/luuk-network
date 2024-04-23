@@ -1,19 +1,6 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@assets": ["./src/assets"],
-      "@assets/*": ["./src/assets/*"],
-      "@blocks": ["./src/blocks"],
-      "@blocks/*": ["./src/blocks/*"],
-      "@components": ["./src/components"],
-      "@components/*": ["./src/components/*"],
-      "@layouts": ["./src/layouts"],
-      "@layouts/*": ["./src/layouts/*"],
-      "@lib": ["./src/lib"],
-      "@lib/*": ["./src/lib/*"]
-    },
     "checkJs": true
   }
 }

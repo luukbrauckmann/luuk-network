@@ -1,21 +1,15 @@
 {
-  "name": "luukbrauckmann",
+  "name": "",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "types": "node scripts/types"
+    "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^9.1.0",
-    "astro": "^4.4.15",
-    "datocms-structured-text-to-html-string": "^3.0.0"
-  },
-  "devDependencies": {
-    "@rollup/plugin-graphql": "^2.0.4"
+    "astro": "^4.6.3"
   }
 }

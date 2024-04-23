@@ -1,5 +1,0 @@
-fragment Hero on HeroRecord {
-  title {
-    value
-  }
-}
