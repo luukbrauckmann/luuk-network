@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "luukbrauckmann",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,6 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^10.2.3",
     "astro": "^4.6.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-plugin-astro": "^0.33.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-css-order": "^2.1.1"
   }
 }
