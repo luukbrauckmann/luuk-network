@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "predev": "node ./scripts/site.js",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
@@ -11,7 +12,12 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^10.2.3",
-    "astro": "^4.6.3"
+    "@datocms/cma-client-node": "^3.2.1",
+    "@rollup/plugin-graphql": "^2.0.4",
+    "accept-language-parser": "^1.5.0",
+    "astro": "^4.6.3",
+    "dotenv": "^16.4.5",
+    "graphql": "^16.8.1"
   },
   "devDependencies": {
     "eslint": "^8.57.0",

@@ -1,0 +1,15 @@
+---
+import { datocms } from '@lib';
+import query from './_index.query.graphql';
+import { site } from '@lib/data';
+
+export async function getStaticPaths() {
+  return site.locales.map((locale: string) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+
+const { page } = await datocms.request(query, { locale });
+---
+
+<h1>{ page.title }</h1>
