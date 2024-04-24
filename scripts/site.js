@@ -10,4 +10,4 @@ const client = buildClient({
 });
 const site = await client.site.find();
 
-await writeFile("./src/lib/site.json", JSON.stringify(site, null, 2));
+await writeFile("./src/lib/data/site.json", JSON.stringify(site, null, 2));

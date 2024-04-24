@@ -1,8 +1,9 @@
 ---
-import { datocms } from '@lib';
-import query from './_index.query.graphql';
-import { site } from '@lib/data';
-import { Default } from '@layouts';
+import { datocms } from "@lib";
+import query from "./_index.query.graphql";
+import { site } from "@lib/data";
+import { Default } from "@layouts";
+import { Blocks } from "@blocks";
 
 export async function getStaticPaths() {
   return site.locales.map((locale: string) => ({ params: { locale } }));
@@ -14,5 +15,5 @@ const { page } = await datocms.request(query, { locale });
 ---
 
 <Default>
-  <h1>{ page.title }</h1>
+  <Blocks blocks={page.body} />
 </Default>

@@ -1,0 +1,21 @@
+---
+import { NotFound } from "@blocks";
+
+const blockFiles = await Astro.glob("@blocks/**/*.astro");
+
+const { blocks } = Astro.props;
+---
+
+{
+  blocks.map((block: any) => {
+    const BlockElement = blockFiles.find((blockFile) =>
+      blockFile.file.includes(block.__typename.replace("Record", ""))
+    );
+
+    if (BlockElement) {
+      return <BlockElement.default {...block} />;
+    } else {
+      return <NotFound {block} />;
+    }
+  })
+}

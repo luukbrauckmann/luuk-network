@@ -1,5 +1,18 @@
+#import '@blocks/Hero/Hero.fragment.graphql'
+
 query HomeQuery($locale: SiteLocale) {
   page: home(locale: $locale) {
+    _seoMetaTags {
+      attributes
+      content
+      tag
+    }
+    body {
+      __typename
+      ... on HeroRecord {
+        ...Hero
+      }
+    }
     title
   }
 }
