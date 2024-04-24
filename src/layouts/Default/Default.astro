@@ -1,16 +1,24 @@
 ---
+import { Preload, Seo } from "@components";
+
+import "@lib/css/reset.css";
+import "@lib/css/typography.css";
+
 const { locale } = Astro.params;
+const { site, page } = Astro.props;
 ---
 
 <html lang={locale}>
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <Seo tags={[...site.faviconMetaTags, ...page._seoMetaTags]} />
+
+    <Preload />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>

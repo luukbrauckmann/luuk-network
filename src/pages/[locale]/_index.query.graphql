@@ -1,6 +1,13 @@
 #import '@blocks/Hero/Hero.fragment.graphql'
 
 query HomeQuery($locale: SiteLocale) {
+  _site(locale: $locale) {
+    faviconMetaTags(variants: [icon, appleTouchIcon, msApplication]) {
+      attributes
+      content
+      tag
+    }
+  }
   page: home(locale: $locale) {
     _seoMetaTags {
       attributes

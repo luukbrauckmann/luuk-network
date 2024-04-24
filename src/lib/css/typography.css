@@ -1,0 +1,72 @@
+@font-face {
+  font-style: normal;
+  font-weight: 300 800;
+  font-stretch: 100%;
+  src: url(/fonts/open-sans.woff2) format("woff2");
+  font-family: "open-sans";
+  font-display: swap;
+}
+
+@font-face {
+  font-style: italic;
+  font-weight: 300 800;
+  font-stretch: 100%;
+  src: url(/fonts/open-sans-Italic.woff2) format("woff2");
+  font-family: "open-sans";
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400 700;
+  src: url(/fonts/pixelify-sans.woff2) format("woff2");
+  font-family: "pixelify-sans";
+  font-display: swap;
+}
+
+:root {
+  --font-size-base: 1rem;
+  --font-size-title: 2.25rem;
+  --font-size-section-title: 3rem;
+  --font-size-small: 0.85rem;
+
+  --font-family-base: "open-sans", system-ui, sans-serif;
+  --font-family-title: "pixelify-sans", system-ui, sans-serif;
+
+  --line-height-base: 1.5;
+  --line-height-title: 1.15;
+}
+
+body {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  font-family: var(--font-family-base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small {
+  margin-block: 0px;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-title);
+  line-height: var(--line-height-title);
+  font-family: var(--font-family-title);
+}
+
+small {
+  font-size: var(--font-size-small);
+}

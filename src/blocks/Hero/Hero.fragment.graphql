@@ -1,3 +1,7 @@
 fragment Hero on HeroRecord {
-  title
+  title {
+    blocks
+    links
+    value
+  }
 }
