@@ -1,0 +1,33 @@
+---
+const { locale } = Astro.params;
+---
+
+<ul class="nav">
+  <li>
+    <a class="nav__link" href={`/${locale}/`}>Home</a>
+  </li>
+  <li>
+    <a class="nav__link" href={`/${locale}/`}>Me myself & I</a>
+  </li>
+  <li>
+    <a class="nav__link" href={`/${locale}/`}>Work</a>
+  </li>
+  <li>
+    <a class="nav__link" href={`/${locale}/`}>Blog</a>
+  </li>
+</ul>
+
+<style>
+  .nav {
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .nav__link {
+    display: inline-block;
+    padding: 1rem;
+    color: inherit;
+    text-decoration: none;
+  }
+</style>

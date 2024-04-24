@@ -1,0 +1,22 @@
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+}
+
+body > * {
+  display: grid;
+  grid-template-columns: [full-start] 1fr [main-start] minmax(0px, 1440px) [main-end] 1fr [full-end];
+  column-gap: var(--spacing-layout);
+}
+
+body > * > * {
+  grid-column: main;
+}
+
+:root {
+  --spacing: 0.75rem;
+  --spacing-block: 0.75rem;
+  --spacing-inline: 2rem;
+  --spacing-layout: 1rem;
+}

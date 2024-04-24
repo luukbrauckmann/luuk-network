@@ -1,7 +1,9 @@
 ---
-import { Preload, Seo } from "@components";
+import { Footer, Header, Preload, Seo } from "@components";
 
+import "@lib/css/layout.css";
 import "@lib/css/reset.css";
+import "@lib/css/theme.css";
 import "@lib/css/typography.css";
 
 const { locale } = Astro.params;
@@ -19,6 +21,12 @@ const { site, page } = Astro.props;
     <Preload />
   </head>
   <body>
-    <slot />
+    <Header />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
   </body>
 </html>

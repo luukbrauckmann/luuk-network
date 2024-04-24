@@ -1,0 +1,33 @@
+---
+import { site } from "@lib/data";
+
+const { locale } = Astro.params;
+const locales = site.locales.filter((siteLocale) => siteLocale !== locale);
+---
+
+<ul class="locale-selector">
+  {
+    locales.map((locale) => (
+      <li>
+        <a class="locale-selector__link" href={`/${locale}/`}>
+          {locale}
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .locale-selector {
+    display: flex;
+    padding: 0;
+    list-style: none;
+  }
+
+  .locale-selector__link {
+    display: inline-block;
+    padding: 1rem;
+    color: inherit;
+    text-decoration: none;
+  }
+</style>
