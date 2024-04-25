@@ -20,8 +20,15 @@ const locales = site.locales.filter((siteLocale) => siteLocale !== locale);
 <style>
   .locale-selector {
     display: flex;
+    flex-direction: column;
     padding: 0;
     list-style: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    .locale-selector {
+      flex-direction: row;
+    }
   }
 
   .locale-selector__link {

@@ -20,8 +20,15 @@ const { locale } = Astro.params;
 <style>
   .nav {
     display: flex;
+    flex-direction: column;
     padding: 0;
     list-style-type: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    .nav {
+      flex-direction: row;
+    }
   }
 
   .nav__link {
