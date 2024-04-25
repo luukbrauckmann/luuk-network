@@ -38,7 +38,7 @@
     "nl",
     "en"
   ],
-  "last_data_change_at": "2024-04-23T21:11:02.907Z",
+  "last_data_change_at": "2024-04-25T20:12:48.184Z",
   "google_maps_api_token": "AIzaSyDMMrHWNDFFrsj-MYvM0ScFmkzA1YmgsAo",
   "global_seo": {
     "nl": {
@@ -123,6 +123,14 @@
     },
     {
       "id": "M-wc0R9gSbKXYvm2_Bjn6Q",
+      "type": "item_type"
+    },
+    {
+      "id": "ISlXmSepRWOR5f2_hQB78g",
+      "type": "item_type"
+    },
+    {
+      "id": "NJ8p2V6fQim_p3SulJG4rQ",
       "type": "item_type"
     }
   ],

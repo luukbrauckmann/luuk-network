@@ -1,0 +1,17 @@
+#import '@blocks/Text/Text.fragment.graphql'
+#import '@blocks/Title/Title.fragment.graphql'
+
+fragment Section on SectionRecord {
+  header {
+    __typename
+    ... on TitleRecord {
+      ...Title
+    }
+  }
+  content {
+    __typename
+    ... on TextRecord {
+      ...Text
+    }
+  }
+}

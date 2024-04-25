@@ -2,6 +2,7 @@
 import { LocaleSelector, Nav } from "@components";
 
 const { locale } = Astro.params;
+const { nav } = Astro.props;
 ---
 
 <header>
@@ -46,7 +47,7 @@ const { locale } = Astro.params;
       <span class="a11y-sr">Home</span>
     </a>
 
-    <Nav />
+    <Nav links={nav} />
 
     <LocaleSelector />
   </nav>

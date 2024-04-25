@@ -8,7 +8,7 @@ import "@lib/css/theme.css";
 import "@lib/css/typography.css";
 
 const { locale } = Astro.params;
-const { site, page } = Astro.props;
+const { app, site, page } = Astro.props;
 ---
 
 <html lang={locale}>
@@ -20,7 +20,7 @@ const { site, page } = Astro.props;
     <Seo tags={[...site.faviconMetaTags, ...page._seoMetaTags]} />
   </head>
   <body>
-    <Header />
+    <Header nav={app.nav} />
 
     <main>
       <slot />

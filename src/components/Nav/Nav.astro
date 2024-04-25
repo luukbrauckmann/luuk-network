@@ -1,20 +1,17 @@
 ---
-const { locale } = Astro.params;
+import { Link } from "@components";
+
+const { links } = Astro.props;
 ---
 
 <ul class="nav">
-  <li>
-    <a class="nav__link" href={`/${locale}/`}>Home</a>
-  </li>
-  <li>
-    <a class="nav__link" href={`/${locale}/`}>Me myself & I</a>
-  </li>
-  <li>
-    <a class="nav__link" href={`/${locale}/`}>Work</a>
-  </li>
-  <li>
-    <a class="nav__link" href={`/${locale}/`}>Blog</a>
-  </li>
+  {
+    links.map((link) => (
+      <li>
+        <Link {...link} />
+      </li>
+    ))
+  }
 </ul>
 
 <style>

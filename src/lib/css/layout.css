@@ -14,6 +14,15 @@ body > * > * {
   grid-column: main;
 }
 
+.layout-text {
+  display: grid;
+  grid-template-columns: [full-start] 1fr [text-start] minmax(0px, 80ch) [text-end] 1fr [full-end];
+}
+
+.layout-text > * {
+  grid-column: text;
+}
+
 :root {
   --spacing: 0.75rem;
   --spacing-block: 0.75rem;

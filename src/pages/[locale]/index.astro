@@ -12,9 +12,9 @@ export async function getStaticPaths() {
 
 const { locale } = Astro.params;
 
-const { site, page } = await datocms.request(query, { locale });
+const { app, site, page } = await datocms.request(query, { locale });
 ---
 
-<Default {site} {page}>
+<Default {app} {site} {page}>
   <Blocks blocks={page.body} />
 </Default>

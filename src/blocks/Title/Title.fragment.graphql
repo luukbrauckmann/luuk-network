@@ -1,0 +1,3 @@
+fragment Title on TitleRecord {
+  text
+}

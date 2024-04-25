@@ -1,0 +1,21 @@
+---
+import { Blocks } from "@blocks";
+
+const { header, content } = Astro.props;
+---
+
+<section class="section-block layout-text">
+  <header>
+    <Blocks blocks={[header]} />
+  </header>
+
+  <div>
+    <Blocks blocks={content} />
+  </div>
+</section>
+
+<style>
+  .section-block {
+    grid-column: full;
+  }
+</style>
