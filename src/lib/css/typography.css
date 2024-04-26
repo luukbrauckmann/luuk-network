@@ -25,10 +25,14 @@
 }
 
 :root {
+  --font-size-scale: 1.414; /* Augmented Fourth*/
   --font-size-base: 1rem;
-  --font-size-title: 2.25rem;
-  --font-size-section-title: 3rem;
-  --font-size-small: 0.85rem;
+
+  --font-size-xl: calc(var(--font-size-base) * pow(var(--font-size-scale), 4));
+  --font-size-lg: calc(var(--font-size-base) * pow(var(--font-size-scale), 3));
+  --font-size-md: calc(var(--font-size-base) * pow(var(--font-size-scale), 2));
+  --font-size-sm: calc(var(--font-size-base) / pow(var(--font-size-scale), 2));
+  --font-size-xs: calc(var(--font-size-base) / pow(var(--font-size-scale), 3));
 
   --font-family-base: "open-sans", system-ui, sans-serif;
   --font-family-title: "pixelify-sans", system-ui, sans-serif;
@@ -69,11 +73,34 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: var(--font-size-title);
   line-height: var(--line-height-title);
   font-family: var(--font-family-title);
 }
 
+h1 {
+  font-size: var(--font-size-xl);
+}
+
+h2 {
+  font-size: var(--font-size-lg);
+}
+
+h3 {
+  font-size: var(--font-size-md);
+}
+
+h4 {
+  font-size: var(--font-size-base);
+}
+
+h5 {
+  font-size: var(--font-size-sm);
+}
+
+h6 {
+  font-size: var(--font-size-xs);
+}
+
 small {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-xs);
 }

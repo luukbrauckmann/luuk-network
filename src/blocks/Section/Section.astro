@@ -5,11 +5,11 @@ const { header, content } = Astro.props;
 ---
 
 <section class="section-block layout-text">
-  <header>
+  <header class="section-block__header">
     <Blocks blocks={[header]} />
   </header>
 
-  <div>
+  <div class="section-block__content">
     <Blocks blocks={content} />
   </div>
 </section>
@@ -17,5 +17,9 @@ const { header, content } = Astro.props;
 <style>
   .section-block {
     grid-column: full;
+    padding-block: var(--spacing-xl);
+  }
+  .section-block__header {
+    margin-block-end: var(--spacing-lg);
   }
 </style>

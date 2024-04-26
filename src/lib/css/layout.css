@@ -1,3 +1,14 @@
+:root {
+  --spacing-scale: 1.414;
+  --spacing-base: 0.75rem;
+
+  --spacing-xl: calc(var(--spacing-base) * pow(var(--spacing-scale), 4));
+  --spacing-lg: calc(var(--spacing-base) * pow(var(--spacing-scale), 3));
+  --spacing-md: calc(var(--spacing-base) * pow(var(--spacing-scale), 2));
+  --spacing-sm: calc(var(--spacing-base) / pow(var(--spacing-scale), 2));
+  --spacing-xs: calc(var(--spacing-base) / pow(var(--spacing-scale), 3));
+}
+
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -7,7 +18,7 @@ body {
 body > * {
   display: grid;
   grid-template-columns: [full-start] 1fr [main-start] minmax(0px, 1440px) [main-end] 1fr [full-end];
-  column-gap: var(--spacing-layout);
+  column-gap: var(--spacing-base);
 }
 
 body > * > * {
@@ -21,11 +32,4 @@ body > * > * {
 
 .layout-text > * {
   grid-column: text;
-}
-
-:root {
-  --spacing: 0.75rem;
-  --spacing-block: 0.75rem;
-  --spacing-inline: 2rem;
-  --spacing-layout: 1rem;
 }

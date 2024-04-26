@@ -1,5 +1,6 @@
 ---
 import { site } from "@lib/data";
+import { translate } from "@lib/js/i18n";
 
 const { locale } = Astro.params;
 const locales = site.locales.filter((siteLocale) => siteLocale !== locale);
@@ -10,7 +11,7 @@ const locales = site.locales.filter((siteLocale) => siteLocale !== locale);
     locales.map((locale) => (
       <li>
         <a class="locale-selector__link" href={`/${locale}/`}>
-          {locale}
+          {translate(locale)}
         </a>
       </li>
     ))
