@@ -1,5 +1,5 @@
 ---
-import { Footer, Header, Preload, Seo } from "@components";
+import { Footer, Header, Seo } from "@components";
 
 import "@lib/css/a11y.css";
 import "@lib/css/layout.css";
@@ -18,8 +18,6 @@ const { app, site, page } = Astro.props;
     <meta name="generator" content={Astro.generator} />
 
     <Seo tags={[...site.faviconMetaTags, ...page._seoMetaTags]} />
-
-    <Preload />
   </head>
   <body>
     <Header nav={app.nav} />
