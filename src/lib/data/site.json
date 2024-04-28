@@ -38,7 +38,7 @@
     "nl",
     "en"
   ],
-  "last_data_change_at": "2024-04-25T20:54:36.387Z",
+  "last_data_change_at": "2024-04-28T16:14:13.382Z",
   "google_maps_api_token": "AIzaSyDMMrHWNDFFrsj-MYvM0ScFmkzA1YmgsAo",
   "global_seo": {
     "nl": {
@@ -99,6 +99,10 @@
     },
     {
       "id": "WUv5o2M-QGeEpTmEbW0AtQ",
+      "type": "item_type"
+    },
+    {
+      "id": "ByGZNmxASQauP0wIrQhL9w",
       "type": "item_type"
     },
     {

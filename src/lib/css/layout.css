@@ -17,8 +17,8 @@ body {
 
 body > * {
   display: grid;
-  grid-template-rows: minmax(0px, auto);
   grid-template-columns: [full-start] 1fr [main-start] minmax(0px, 1440px) [main-end] 1fr [full-end];
+  grid-auto-rows: max-content;
   column-gap: var(--spacing-base);
 }
 
