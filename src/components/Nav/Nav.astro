@@ -8,8 +8,6 @@ links = links.map((link) => {
   link.slug = paths(link.link).filter((path) => path.locale === locale)[0];
   return link;
 });
-
-console.log(links);
 ---
 
 <ul class="nav">
