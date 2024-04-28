@@ -1,7 +1,8 @@
+#import '@components/Image/Image.fragment.graphql'
+
 fragment Hero on HeroRecord {
-  title {
-    blocks
-    links
-    value
+  title
+  image {
+    ...Image
   }
 }

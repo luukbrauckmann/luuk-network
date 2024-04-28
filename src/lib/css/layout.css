@@ -29,6 +29,7 @@ body > * > * {
 .layout-text {
   display: grid;
   grid-template-columns: [full-start] 1fr [text-start] minmax(0px, 80ch) [text-end] 1fr [full-end];
+  column-gap: var(--spacing-base);
 }
 
 .layout-text > * {

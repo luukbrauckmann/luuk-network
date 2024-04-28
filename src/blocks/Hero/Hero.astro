@@ -1,9 +1,39 @@
 ---
-import { StructuredText } from "@components";
-
-const { title } = Astro.props;
+import { Image } from "@components";
+const { title, image } = Astro.props;
 ---
 
 <div class="hero-block">
-  <StructuredText {...title} />
+  <div>
+    <h1 class="hero-block__title">{title}</h1>
+  </div>
+  {
+    image && (
+      <div>
+        <Image {...image} />
+      </div>
+    )
+  }
 </div>
+
+<style>
+  .hero-block {
+    display: grid;
+    position: relative;
+    grid-template-columns: minmax(450px, 1fr) minmax(0, 1fr);
+    align-items: center;
+    z-index: -1;
+    margin-top: -3.5rem;
+    height: 90dvh;
+  }
+
+  .hero-block__title {
+    font-size: calc(var(--font-size-base) * pow(var(--font-size-scale), 5));
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .hero-block__title {
+      font-size: calc(var(--font-size-base) * pow(var(--font-size-scale), 6));
+    }
+  }
+</style>

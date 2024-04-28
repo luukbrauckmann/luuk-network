@@ -1,0 +1,38 @@
+---
+interface Props {
+  responsiveImage: {
+    alt: string;
+    aspectRatio: number;
+    base64: string;
+    height: number;
+    src: string;
+    srcSet: string;
+    width: number;
+  };
+}
+
+const { responsiveImage } = Astro.props;
+---
+
+<enhanced-image>
+  <img
+    src={responsiveImage.src}
+    srcset={responsiveImage.srcSet}
+    alt={responsiveImage.alt ?? ""}
+    height={responsiveImage.height}
+    width={responsiveImage.width}
+    loading="lazy"
+    style={{
+      aspectRatio: responsiveImage.aspectRatio,
+      backgroundImage: `url(${responsiveImage.base64})`,
+    }}
+  />
+</enhanced-image>
+
+<script src="./Image.client.js"></script>
+
+<style>
+  img {
+    height: auto;
+  }
+</style>

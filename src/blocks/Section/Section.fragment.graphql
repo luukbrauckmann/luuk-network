@@ -2,6 +2,8 @@
 #import '@blocks/Title/Title.fragment.graphql'
 
 fragment Section on SectionRecord {
+  title
+  slug
   header {
     __typename
     ... on TitleRecord {

@@ -1,17 +1,19 @@
 ---
 import { Link } from "@components";
+import { paths } from "@lib/js/i18n";
 
-const { links } = Astro.props;
+const { locale } = Astro.params;
+let { links } = Astro.props;
+links = links.map((link) => {
+  link.slug = paths(link.link).filter((path) => path.locale === locale)[0];
+  return link;
+});
+
+console.log(links);
 ---
 
 <ul class="nav">
-  {
-    links.map((link) => (
-      <li>
-        <Link {...link} />
-      </li>
-    ))
-  }
+  {links.map((link) => <li>{<Link class="nav__link" {...link} />}</li>)}
 </ul>
 
 <style>
@@ -32,6 +34,8 @@ const { links } = Astro.props;
     display: inline-block;
     padding: 1rem;
     color: inherit;
+    line-height: 1;
+    font-family: var(--font-family-title);
     text-decoration: none;
   }
 </style>

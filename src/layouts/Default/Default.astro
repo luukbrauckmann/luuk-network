@@ -20,7 +20,7 @@ const { app, site, page } = Astro.props;
     <Seo tags={[...site.faviconMetaTags, ...page._seoMetaTags]} />
   </head>
   <body>
-    <Header nav={app.nav} />
+    <Header nav={app.nav} slugs={page.slugs} />
 
     <main>
       <slot />

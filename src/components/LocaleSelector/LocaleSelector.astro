@@ -1,18 +1,29 @@
 ---
+import { Link } from "@components";
 import { site } from "@lib/data";
 import { translate } from "@lib/js/i18n";
 
 const { locale } = Astro.params;
-const locales = site.locales.filter((siteLocale) => siteLocale !== locale);
+let { slugs } = Astro.props;
+
+if (slugs) {
+  slugs = slugs.filter((slug) => slug.locale !== locale);
+} else {
+  slugs = site.locales
+    .map((locale) => ({ locale, value: "" }))
+    .filter((slug) => slug.locale !== locale);
+}
 ---
 
 <ul class="locale-selector">
   {
-    locales.map((locale) => (
+    slugs.map((slug: { locale: string }) => (
       <li>
-        <a class="locale-selector__link" href={`/${locale}/`}>
-          {translate(locale)}
-        </a>
+        <Link
+          class="locale-selector__link"
+          {slug}
+          title={translate(slug.locale)}
+        />
       </li>
     ))
   }
@@ -36,6 +47,7 @@ const locales = site.locales.filter((siteLocale) => siteLocale !== locale);
     display: inline-block;
     padding: 1rem;
     color: inherit;
+    font-family: var(--font-family-title);
     text-decoration: none;
   }
 </style>

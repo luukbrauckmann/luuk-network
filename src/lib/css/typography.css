@@ -75,6 +75,7 @@ h5,
 h6 {
   line-height: var(--line-height-title);
   font-family: var(--font-family-title);
+  text-wrap: balance;
 }
 
 h1 {

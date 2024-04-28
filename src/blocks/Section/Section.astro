@@ -1,10 +1,10 @@
 ---
 import { Blocks } from "@blocks";
 
-const { header, content } = Astro.props;
+const { slug, header, content } = Astro.props;
 ---
 
-<section class="section-block layout-text">
+<section id={slug} class="section-block layout-text">
   <header class="section-block__header">
     <Blocks blocks={[header]} />
   </header>

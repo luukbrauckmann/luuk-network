@@ -1,0 +1,11 @@
+fragment Image on FileField {
+  responsiveImage {
+    alt
+    aspectRatio
+    base64
+    height
+    src
+    srcSet
+    width
+  }
+}

@@ -16,5 +16,6 @@ const { app, site, page } = await datocms.request(query, { locale });
 ---
 
 <Default {app} {site} {page}>
+  <Blocks blocks={[page.header]} />
   <Blocks blocks={page.body} />
 </Default>

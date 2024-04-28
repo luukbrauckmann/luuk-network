@@ -3,7 +3,7 @@
 #import '@blocks/Text/Text.fragment.graphql'
 #import '@blocks/Title/Title.fragment.graphql'
 
-query HomeQuery($locale: SiteLocale) {
+query PageQuery($locale: SiteLocale, $slug: String) {
   site: _site(locale: $locale) {
     faviconMetaTags(variants: [icon, appleTouchIcon, msApplication]) {
       attributes
@@ -32,11 +32,21 @@ query HomeQuery($locale: SiteLocale) {
       title
     }
   }
-  page: home(locale: $locale) {
+  page(locale: $locale, filter: { slug: { eq: $slug } }) {
+    _allSlugLocales {
+      locale
+      value
+    }
     _seoMetaTags {
       attributes
       content
       tag
+    }
+    parentPage {
+      _allSlugLocales {
+        locale
+        value
+      }
     }
     header {
       __typename

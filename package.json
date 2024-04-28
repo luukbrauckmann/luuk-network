@@ -3,9 +3,10 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "predev": "node ./scripts/site.js",
+    "predev": "node ./scripts/predev.js",
     "dev": "astro dev",
     "start": "astro dev",
+    "prebuild": "node ./scripts/prebuild.js",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"

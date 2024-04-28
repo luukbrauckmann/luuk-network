@@ -1,6 +1,7 @@
 export { default as Footer } from "./Footer/Footer.astro";
 export { default as Header } from "./Header/Header.astro";
 export { default as Icon } from "./Icon/Icon.astro";
+export { default as Image } from "./Image/Image.astro";
 export { default as Link } from "./Link/Link.astro";
 export { default as LocaleSelector } from "./LocaleSelector/LocaleSelector.astro";
 export { default as Nav } from "./Nav/Nav.astro";
