@@ -1,9 +1,9 @@
 ---
-import { Link } from "@components";
+import { Icon, Link, LocaleSelector } from "@components";
 import { paths } from "@lib/js/i18n";
 
 const { locale } = Astro.params;
-let { links } = Astro.props;
+let { links, currentPageSlugs } = Astro.props;
 links = links.map((link) => {
   link.slug = paths(link.link).filter((path) => path.locale === locale)[0];
   return link;
@@ -11,8 +11,21 @@ links = links.map((link) => {
 ---
 
 <ul class="nav">
-  {links.map((link) => <li>{<Link class="nav__link" {...link} />}</li>)}
+  {
+    links.map((link) => (
+      <li>
+        {
+          <Link class="nav__link" {...link}>
+            <Icon name={link.icon} />
+            <span class="title">{link.title}</span>
+          </Link>
+        }
+      </li>
+    ))
+  }
 </ul>
+
+<LocaleSelector slugs={currentPageSlugs} />
 
 <style>
   .nav {
@@ -29,11 +42,16 @@ links = links.map((link) => {
   }
 
   .nav__link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
     padding: 1rem;
     color: inherit;
-    line-height: 1;
     font-family: var(--font-family-title);
     text-decoration: none;
+  }
+
+  .nav__link:hover {
+    background-color: var(--color-hover);
   }
 </style>

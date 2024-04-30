@@ -1,17 +1,9 @@
 ---
 import { Icon } from "@components";
 
-const { locale } = Astro.params;
-const { icon, slug, title, ...props } = Astro.props;
+const { slug, ...props } = Astro.props;
 ---
 
 <a href={`/${slug.locale}/${slug.value ? slug.value + "/" : ""}`} {...props}>
-  {
-    icon && (
-      <span class="link__icon">
-        <Icon name={icon} />
-      </span>
-    )
-  }
-  <span class="link__title">{title}</span>
+  <slot />
 </a>

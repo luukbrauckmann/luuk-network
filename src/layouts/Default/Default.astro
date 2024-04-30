@@ -1,5 +1,5 @@
 ---
-import { Footer, Header, Seo } from "@components";
+import { Footer, Header, IconSprite, Seo } from "@components";
 
 import "@lib/css/a11y.css";
 import "@lib/css/layout.css";
@@ -26,6 +26,8 @@ const { app, site, page } = Astro.props;
       <slot />
     </main>
 
-    <Footer />
+    <Footer nav={app.nav} />
+
+    <IconSprite />
   </body>
 </html>

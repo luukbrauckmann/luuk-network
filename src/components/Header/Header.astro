@@ -47,9 +47,7 @@ const { nav, slugs } = Astro.props;
       <span class="a11y-sr">Home</span>
     </a>
 
-    <Nav links={nav} />
-
-    <LocaleSelector {slugs} />
+    <Nav links={nav} currentPageSlugs={slugs} />
   </nav>
 </header>
 

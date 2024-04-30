@@ -19,11 +19,9 @@ if (slugs) {
   {
     slugs.map((slug: { locale: string }) => (
       <li>
-        <Link
-          class="locale-selector__link"
-          {slug}
-          title={translate(slug.locale)}
-        />
+        <Link class="locale-selector__link" {slug}>
+          {translate(slug.locale)}
+        </Link>
       </li>
     ))
   }
@@ -49,5 +47,9 @@ if (slugs) {
     color: inherit;
     font-family: var(--font-family-title);
     text-decoration: none;
+  }
+
+  .locale-selector__link:hover {
+    background-color: var(--color-hover);
   }
 </style>
