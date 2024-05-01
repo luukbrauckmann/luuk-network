@@ -2,11 +2,12 @@
 interface Props {
   name: string;
   title?: string;
+  [key: string]: string;
 }
-const { name, title } = Astro.props;
+const { name, title, ...props } = Astro.props;
 ---
 
-<svg aria-hidden={title ? false : true} data-icon={name}>
+<svg aria-hidden={title ? false : true} data-icon={name} {...props}>
   {title && <title>{title}</title>}
   <use xlink:href={`#${name}`}></use>
 </svg>

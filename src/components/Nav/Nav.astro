@@ -27,9 +27,10 @@ links = links.map((link) => {
           links.map((link) => (
             <li>
               {
-                <Link class="nav-list__link" {...link}>
-                  <Icon name={link.icon} />
-                  <span class="title">{link.title}</span>
+                <Link class="nav-link" {...link}>
+                  <Icon class="nav-link__icon" name={link.icon} />
+                  <p class="nav-link__title">{link.title}</p>
+                  <p class="nav-link__description">{link.description}</p>
                 </Link>
               }
             </li>
@@ -47,14 +48,14 @@ links = links.map((link) => {
 <style>
   .nav {
     display: flex;
-    align-items: center;
     position: relative;
+    align-items: center;
   }
 
   .toggle-button {
-    padding: var(--spacing-md);
-    background-color: transparent;
     border: none;
+    background-color: transparent;
+    padding: var(--spacing-md);
     line-height: 1;
   }
 
@@ -66,7 +67,7 @@ links = links.map((link) => {
     outline-offset: -0.25rem;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 992px) {
     .toggle-button {
       display: none;
     }
@@ -78,6 +79,8 @@ links = links.map((link) => {
     bottom: 0;
     transform: translateY(100%);
     background-color: var(--color-foreground);
+    min-width: 320px;
+    max-width: 100dvw;
   }
 
   .toggle-button[aria-expanded="true"] + .expandabble-menu {
@@ -88,14 +91,14 @@ links = links.map((link) => {
     display: none;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 992px) {
     .toggle-button[aria-expanded="true"] + .expandabble-menu,
     .toggle-button[aria-expanded="false"] + .expandabble-menu {
       display: flex;
       position: initial;
+      transform: initial;
       background-color: transparent;
     }
-    
   }
 
   .nav-list {
@@ -105,29 +108,49 @@ links = links.map((link) => {
     list-style-type: none;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 992px) {
     .nav-list {
       flex-direction: row;
     }
   }
 
-  .nav-list__link {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+  .nav-link {
+    display: grid;
+    grid-template-areas: 'icon title' 'icon description';
+    grid-template-columns: auto 1fr;
+    column-gap: 0.75rem;
     padding: var(--spacing-md);
     color: inherit;
-    font-family: var(--font-family-title);
     text-decoration: none;
-    white-space: nowrap;
-    line-height: 1;
   }
 
-  .nav-list__link:hover {
+  .nav-link:hover {
     background-color: var(--color-hover);
   }
 
-  .nav-list__link:focus {
+  .nav-link:focus {
     outline-offset: -0.25rem;
+  }
+
+  .nav-link__icon {
+    grid-area: icon;
+  }
+
+  .nav-link__title {
+    font-family: var(--font-family-title);
+    grid-area: title;
+    white-space: nowrap;
+  }
+
+  .nav-link__description {
+    grid-area: description;
+    font-size: var(--font-size-sm);
+  }
+
+  @media screen and (min-width: 992px) {
+    .nav-link__description {
+      display: none;
+    }
+    
   }
 </style>

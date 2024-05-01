@@ -28,11 +28,11 @@
   --font-size-scale: 1.414; /* Augmented Fourth*/
   --font-size-base: 1rem;
 
-  --font-size-xl: calc(var(--font-size-base) * pow(var(--font-size-scale), 4));
-  --font-size-lg: calc(var(--font-size-base) * pow(var(--font-size-scale), 3));
-  --font-size-md: calc(var(--font-size-base) * pow(var(--font-size-scale), 2));
-  --font-size-sm: calc(var(--font-size-base) / pow(var(--font-size-scale), 2));
-  --font-size-xs: calc(var(--font-size-base) / pow(var(--font-size-scale), 3));
+  --font-size-xl: calc(var(--font-size-base) * pow(var(--font-size-scale), 3));
+  --font-size-lg: calc(var(--font-size-base) * pow(var(--font-size-scale), 2));
+  --font-size-md: calc(var(--font-size-base) * pow(var(--font-size-scale), 1));
+  --font-size-sm: calc(var(--font-size-base) / pow(var(--font-size-scale), 1));
+  --font-size-xs: calc(var(--font-size-base) / pow(var(--font-size-scale), 2));
 
   --font-family-base: "open-sans", system-ui, sans-serif;
   --font-family-title: "pixelify-sans", system-ui, sans-serif;

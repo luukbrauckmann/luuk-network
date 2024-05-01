@@ -30,6 +30,7 @@ query PageQuery($locale: SiteLocale, $slug: String) {
         }
       }
       title
+      description
     }
     copyrightDisclaimer
   }

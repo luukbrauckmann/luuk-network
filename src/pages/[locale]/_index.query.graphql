@@ -30,6 +30,7 @@ query HomeQuery($locale: SiteLocale) {
         }
       }
       title
+      description
     }
     copyrightDisclaimer
   }
