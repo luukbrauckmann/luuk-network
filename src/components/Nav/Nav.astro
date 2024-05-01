@@ -5,30 +5,76 @@ import { paths } from "@lib/js/i18n";
 const { locale } = Astro.params;
 let { links, currentPageSlugs } = Astro.props;
 links = links.map((link) => {
-  link.slug = paths(link.link).filter((path) => path.locale === locale)[0];
+  if (link.link.__typename === "HomeRecord") {
+    link.slug = { locale };
+  } else {
+    link.slug = paths(link.link).filter((path) => path.locale === locale)[0];
+  }
   return link;
 });
 ---
 
-<ul class="nav">
-  {
-    links.map((link) => (
-      <li>
-        {
-          <Link class="nav__link" {...link}>
-            <Icon name={link.icon} />
-            <span class="title">{link.title}</span>
-          </Link>
-        }
-      </li>
-    ))
-  }
-</ul>
+<enhanced-nav>
+  <nav class="nav">
+    <button class="toggle-button" aria-expanded="false" aria-controls="menu">
+      <Icon name="bars" />
+      <span class="a11y-sr">Menu</span>
+    </button>
 
-<LocaleSelector slugs={currentPageSlugs} />
+    <div id="menu" class="expandabble-menu">
+      <ul class="nav-list">
+        {
+          links.map((link) => (
+            <li>
+              {
+                <Link class="nav-list__link" {...link}>
+                  <Icon name={link.icon} />
+                  <span class="title">{link.title}</span>
+                </Link>
+              }
+            </li>
+          ))
+        }
+      </ul>
+
+      <LocaleSelector slugs={currentPageSlugs} />
+    </div>
+  </nav>
+</enhanced-nav>
+
+<script src="./Nav.client.js"></script>
 
 <style>
-  .nav {
+  .toggle-button {
+    padding: var(--spacing-md);
+    line-height: 1;
+    background-color: transparent;
+    border: none;
+  }
+
+  .toggle-button:hover {
+    background-color: var(--color-hover);
+  }
+
+  .toggle-button:focus {
+    outline-offset: -0.25rem;
+  }
+
+  .expandabble-menu {
+    position: absolute;
+    right: 0;
+    background-color: var(--color-foreground);
+  }
+
+  .toggle-button[aria-expanded="true"] + .expandabble-menu {
+    display: block;
+  }
+
+  .toggle-button[aria-expanded="false"] + .expandabble-menu {
+    display: none;
+  }
+
+  .nav-list {
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -36,22 +82,27 @@ links = links.map((link) => {
   }
 
   @media screen and (min-width: 768px) {
-    .nav {
+    .nav-list {
       flex-direction: row;
     }
   }
 
-  .nav__link {
-    display: inline-flex;
+  .nav-list__link {
+    display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 1rem;
+    padding: var(--spacing-md);
     color: inherit;
+    line-height: 1;
     font-family: var(--font-family-title);
     text-decoration: none;
   }
 
-  .nav__link:hover {
+  .nav-list__link:hover {
     background-color: var(--color-hover);
+  }
+
+  .nav-list__link:focus {
+    outline-offset: -0.25rem;
   }
 </style>

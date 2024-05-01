@@ -31,6 +31,7 @@ query HomeQuery($locale: SiteLocale) {
       }
       title
     }
+    copyrightDisclaimer
   }
   page: home(locale: $locale) {
     _seoMetaTags {

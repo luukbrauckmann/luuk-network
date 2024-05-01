@@ -9,7 +9,8 @@
     "prebuild": "node ./scripts/prebuild.js",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "icons": "svg-sprite-generate -d src/lib/icons -o src/lib/sprites/icon-sprite.svg"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^10.2.3",

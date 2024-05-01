@@ -9,8 +9,8 @@ const { nav, slugs } = Astro.props;
   <nav class="nav">
     <a class="home-link" href={`/${locale}/`}>
       <svg
-        width="47"
-        height="47"
+        width="42"
+        height="42"
         viewBox="0 0 47 47"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -54,8 +54,8 @@ const { nav, slugs } = Astro.props;
 <style>
   .nav {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
   }
 
   @media screen and (min-width: 768px) {
@@ -71,7 +71,17 @@ const { nav, slugs } = Astro.props;
   }
 
   .home-link {
-    height: 3.5rem;
     color: inherit;
+    padding: var(--spacing-base);
+    display: inline-block;
+    line-height: 1;
   }
+
+  .home-link:hover {
+    background-color: var(--color-hover);
+  }
+
+  .home-link:focus {
+    outline-offset: -0.25rem;
+  } 
 </style>

@@ -31,6 +31,7 @@ query PageQuery($locale: SiteLocale, $slug: String) {
       }
       title
     }
+    copyrightDisclaimer
   }
   page(locale: $locale, filter: { slug: { eq: $slug } }) {
     _allSlugLocales {

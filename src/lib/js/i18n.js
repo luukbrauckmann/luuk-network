@@ -1,5 +1,7 @@
+import { translations } from "@lib/data";
+
 export const translate = (/** @type {string} */ key) => {
-  return key;
+  return translations?.[key]?.[key] ?? key;
 };
 
 export const paths = (page) => {
