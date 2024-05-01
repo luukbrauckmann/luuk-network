@@ -45,11 +45,17 @@ links = links.map((link) => {
 <script src="./Nav.client.js"></script>
 
 <style>
+  .nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
   .toggle-button {
     padding: var(--spacing-md);
-    line-height: 1;
     background-color: transparent;
     border: none;
+    line-height: 1;
   }
 
   .toggle-button:hover {
@@ -60,9 +66,17 @@ links = links.map((link) => {
     outline-offset: -0.25rem;
   }
 
+  @media screen and (min-width: 768px) {
+    .toggle-button {
+      display: none;
+    }
+  }
+
   .expandabble-menu {
     position: absolute;
     right: 0;
+    bottom: 0;
+    transform: translateY(100%);
     background-color: var(--color-foreground);
   }
 
@@ -72,6 +86,16 @@ links = links.map((link) => {
 
   .toggle-button[aria-expanded="false"] + .expandabble-menu {
     display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    .toggle-button[aria-expanded="true"] + .expandabble-menu,
+    .toggle-button[aria-expanded="false"] + .expandabble-menu {
+      display: flex;
+      position: initial;
+      background-color: transparent;
+    }
+    
   }
 
   .nav-list {
@@ -93,9 +117,10 @@ links = links.map((link) => {
     gap: 0.75rem;
     padding: var(--spacing-md);
     color: inherit;
-    line-height: 1;
     font-family: var(--font-family-title);
     text-decoration: none;
+    white-space: nowrap;
+    line-height: 1;
   }
 
   .nav-list__link:hover {

@@ -9,8 +9,6 @@ const { nav, slugs } = Astro.props;
   <nav class="nav">
     <a class="home-link" href={`/${locale}/`}>
       <svg
-        width="42"
-        height="42"
         viewBox="0 0 47 47"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +72,8 @@ const { nav, slugs } = Astro.props;
     color: inherit;
     padding: var(--spacing-base);
     display: inline-block;
-    line-height: 1;
+    height: 100%;
+    aspect-ratio: 1;
   }
 
   .home-link:hover {
