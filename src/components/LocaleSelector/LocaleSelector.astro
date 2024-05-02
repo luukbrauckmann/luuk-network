@@ -21,7 +21,7 @@ if (slugs) {
       <li>
         <Link class="locale-selector__link" {slug}>
           <Icon name={slug.locale} />
-          {translate(slug.locale)}
+          {translate(slug.locale, slug.locale)}
         </Link>
       </li>
     ))
@@ -58,5 +58,5 @@ if (slugs) {
 
   .locale-selector__link:focus {
     outline-offset: -0.25rem;
-  } 
+  }
 </style>

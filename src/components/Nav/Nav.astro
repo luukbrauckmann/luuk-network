@@ -1,6 +1,6 @@
 ---
 import { Icon, Link, LocaleSelector } from "@components";
-import { paths } from "@lib/js/i18n";
+import { paths, translate } from "@lib/js/i18n";
 
 const { locale } = Astro.params;
 let { links, currentPageSlugs } = Astro.props;
@@ -17,8 +17,14 @@ links = links.map((link) => {
 <enhanced-nav>
   <nav class="nav">
     <button class="toggle-button" aria-expanded="false" aria-controls="menu">
-      <Icon name="bars" />
-      <span class="a11y-sr">Menu</span>
+      <Icon class="toggle-button__icon--open" name="bars" />
+      <Icon class="toggle-button__icon--close" name="xmark" />
+      <span class="toggle-button__title--open a11y-sr"
+        >{translate("open_menu", locale)}</span
+      >
+      <span class="toggle-button__title--close a11y-sr"
+        >{translate("close_menu", locale)}</span
+      >
     </button>
 
     <div id="menu" class="expandabble-menu">
@@ -48,14 +54,15 @@ links = links.map((link) => {
 <style>
   .nav {
     display: flex;
-    justify-content: end;
     position: relative;
+    justify-content: end;
   }
 
   .toggle-button {
     border: none;
     background-color: transparent;
     padding: var(--spacing-md);
+    color: white;
     line-height: 1;
   }
 
@@ -83,6 +90,20 @@ links = links.map((link) => {
     max-width: 100dvw;
   }
 
+  .toggle-button[aria-expanded="true"] .toggle-button__icon--close,
+  .toggle-button[aria-expanded="true"] .toggle-button__title--close,
+  .toggle-button[aria-expanded="false"] .toggle-button__icon--open,
+  .toggle-button[aria-expanded="true"] .toggle-button__title--open {
+    display: block;
+  }
+
+  .toggle-button[aria-expanded="true"] .toggle-button__icon--open,
+  .toggle-button[aria-expanded="true"] .toggle-button__title--open,
+  .toggle-button[aria-expanded="false"] .toggle-button__icon--close,
+  .toggle-button[aria-expanded="false"] .toggle-button__title--close {
+    display: none;
+  }
+
   .toggle-button[aria-expanded="true"] + .expandabble-menu {
     display: block;
   }
@@ -96,9 +117,9 @@ links = links.map((link) => {
     .toggle-button[aria-expanded="false"] + .expandabble-menu {
       display: flex;
       position: initial;
+      justify-content: space-between;
       transform: initial;
       background-color: transparent;
-      justify-content: space-between;
     }
   }
 
@@ -117,8 +138,8 @@ links = links.map((link) => {
 
   .nav-link {
     display: grid;
-    grid-template-areas: 'icon title' 'icon description';
     grid-template-columns: auto 1fr;
+    grid-template-areas: "icon title" "icon description";
     column-gap: 0.75rem;
     padding: var(--spacing-md);
     color: inherit;
@@ -138,8 +159,8 @@ links = links.map((link) => {
   }
 
   .nav-link__title {
-    font-family: var(--font-family-title);
     grid-area: title;
+    font-family: var(--font-family-title);
     white-space: nowrap;
   }
 
@@ -152,6 +173,5 @@ links = links.map((link) => {
     .nav-link__description {
       display: none;
     }
-    
   }
 </style>
