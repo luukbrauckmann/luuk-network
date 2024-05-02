@@ -18,6 +18,8 @@ const { app, site, page } = Astro.props;
     <meta name="generator" content={Astro.generator} />
 
     <Seo tags={[...site.faviconMetaTags, ...page._seoMetaTags]} />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body>
     <Header nav={app.nav} slugs={page.slugs} />
