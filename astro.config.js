@@ -8,6 +8,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: process.env.CF_PAGES_URL,
   output: "hybrid",
+  server: { port: 4832 },
   adapter: cloudflare(),
   integrations: [sitemap()],
   vite: {
