@@ -1,10 +1,11 @@
 ---
-import { Nav } from "@components";
+import { Nav, Socials } from "@components";
 
 const { app } = Astro.props;
 ---
 
 <footer class="footer">
+  <Socials items={app.socials} />
   <div class="footer__top">
     <p class="copyright-disclaimer">{app.copyrightDisclaimer}</p>
   </div>
@@ -12,7 +13,6 @@ const { app } = Astro.props;
 
 <style>
   .footer {
-    padding-inline: var(--spacing-base);
     padding-block: var(--spacing-xl) var(--spacing-base);
   }
 

@@ -3,6 +3,8 @@
 #import '@blocks/Text/Text.fragment.graphql'
 #import '@blocks/Title/Title.fragment.graphql'
 
+#import '@components/Link/Link.fragment.graphql'
+
 query HomeQuery($locale: SiteLocale) {
   site: _site(locale: $locale) {
     faviconMetaTags(variants: [icon, appleTouchIcon, msApplication]) {
@@ -13,24 +15,10 @@ query HomeQuery($locale: SiteLocale) {
   }
   app(locale: $locale) {
     nav {
-      icon
-      link {
-        __typename
-        ... on PageRecord {
-          _allSlugLocales {
-            locale
-            value
-          }
-          parentPage {
-            _allSlugLocales {
-              locale
-              value
-            }
-          }
-        }
-      }
-      title
-      description
+      ...Link
+    }
+    socials {
+      ...Link
     }
     copyrightDisclaimer
   }

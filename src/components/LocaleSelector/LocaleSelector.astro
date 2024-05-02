@@ -19,10 +19,12 @@ if (slugs) {
   {
     slugs.map((slug: { locale: string }) => (
       <li>
-        <Link class="locale-selector__link" {slug}>
-          <Icon name={slug.locale} />
-          {translate(slug.locale, slug.locale)}
-        </Link>
+        <Link
+          class="locale-selector__link"
+          icon={slug.locale}
+          title={translate(slug.locale, slug.locale)}
+          link={`/${slug.locale}/`}
+        />
       </li>
     ))
   }

@@ -1,11 +1,12 @@
 ---
 import { Image } from "@components";
-const { title, image } = Astro.props;
+const { title, subtitle, image } = Astro.props;
 ---
 
 <div class="hero-block">
   <div>
     <h1 class="hero-block__title">{title}</h1>
+    <p class="hero-block__subtitle">{subtitle}</p>
   </div>
   {
     image && (

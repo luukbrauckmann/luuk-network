@@ -2,6 +2,7 @@
 
 fragment Hero on HeroRecord {
   title
+  subtitle
   image {
     ...Image
   }

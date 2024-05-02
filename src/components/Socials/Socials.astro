@@ -1,0 +1,25 @@
+---
+import { Link } from "@components";
+
+const { items } = Astro.props;
+---
+
+<ul class="socials">
+  {
+    items.map((item) => (
+      <li>
+        <Link {...item} />
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+  }
+</style>
