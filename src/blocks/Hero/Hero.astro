@@ -30,18 +30,18 @@ const { title, image } = Astro.props;
 
   @media only screen and (min-width: 768px) {
     .hero-block {
-      grid-template-columns: minmax(320px, 2fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
       height: 90dvh;
     }
   }
 
   .hero-block__title {
-    font-size: clamp(4rem, 1.6296rem + 11.8519vw, 12rem);
+    font-size: clamp(4.25rem, 2.0357rem + 12.4554vw, 12rem);
   }
 
   @media screen and (min-width: 768px) {
     .hero-block__title {
-      font-size: clamp(4rem, 2.2222rem + 10vw, 10rem);
+      font-size: clamp(3.5rem, 1.6429rem + 10.4464vw, 10rem);
     }
   }
 </style>
