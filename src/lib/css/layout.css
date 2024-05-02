@@ -39,10 +39,7 @@ body > * > * {
   grid-column: text;
 }
 
-.section-block--with-background-color + * {
-  padding-block-start: var(--spacing-xl);
-}
-
+main > :last-child,
 *:has(+ .section-block--with-background-color) {
   padding-block-end: var(--spacing-xl);
 }
