@@ -1,10 +1,17 @@
 ---
 import { Blocks } from "@blocks";
 
-const { slug, header, content } = Astro.props;
+const { slug, backgroundColor, header, content } = Astro.props;
 ---
 
-<section id={slug} class="section-block layout-text">
+<section
+  id={slug}
+  class:list={[
+    "section-block",
+    "layout-text",
+    { "section-block--with-background-color": backgroundColor },
+  ]}
+>
   <header class="section-block__header">
     <Blocks blocks={[header]} />
   </header>
@@ -14,10 +21,13 @@ const { slug, header, content } = Astro.props;
   </div>
 </section>
 
-<style>
+<style define:vars={{ "background-color": backgroundColor?.hex }}>
   .section-block {
     grid-column: full;
-    background-color: var(--color-foreground);
-    padding-block: var(--spacing-xl);
+    background-color: var(--background-color);
+  }
+
+  .section-block--with-background-color {
+    padding-block-end: var(--spacing-xl);
   }
 </style>

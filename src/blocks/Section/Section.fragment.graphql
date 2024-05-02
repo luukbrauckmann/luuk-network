@@ -4,6 +4,9 @@
 fragment Section on SectionRecord {
   title
   slug
+  backgroundColor {
+    hex
+  }
   header {
     __typename
     ... on TitleRecord {

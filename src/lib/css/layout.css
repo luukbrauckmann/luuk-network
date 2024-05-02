@@ -21,6 +21,10 @@ body > * {
   grid-auto-rows: max-content;
 }
 
+body > main {
+  column-gap: var(--spacing-base);
+}
+
 body > * > * {
   grid-column: main;
 }
@@ -33,4 +37,12 @@ body > * > * {
 
 .layout-text > * {
   grid-column: text;
+}
+
+.section-block--with-background-color + * {
+  padding-block-start: var(--spacing-xl);
+}
+
+*:has(+ .section-block--with-background-color) {
+  padding-block-end: var(--spacing-xl);
 }

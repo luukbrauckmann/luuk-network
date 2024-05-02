@@ -25,29 +25,23 @@ const { title, image } = Astro.props;
     place-content: center;
     z-index: -1;
     margin-top: -3.5rem;
-    height: 90dvh;
-    padding: var(--spacing-base)
+    height: 85dvh;
   }
 
   @media only screen and (min-width: 768px) {
     .hero-block {
-      grid-template-columns: minmax(450px, 1fr) minmax(0, 1fr);
+      grid-template-columns: minmax(320px, 2fr) minmax(0, 1fr);
+      height: 90dvh;
     }
   }
 
   .hero-block__title {
-    font-size: calc(var(--font-size-base) * pow(var(--font-size-scale), 4));
+    font-size: clamp(4rem, 1.6296rem + 11.8519vw, 12rem);
   }
 
-  @media only screen and (min-width: 576px) {
+  @media screen and (min-width: 768px) {
     .hero-block__title {
-      font-size: calc(var(--font-size-base) * pow(var(--font-size-scale), 5));
-    }
-  }
-
-  @media only screen and (min-width: 1200px) {
-    .hero-block__title {
-      font-size: calc(var(--font-size-base) * pow(var(--font-size-scale), 6));
+      font-size: clamp(4rem, 2.2222rem + 10vw, 10rem);
     }
   }
 </style>
