@@ -25,7 +25,7 @@
 }
 
 :root {
-  --font-size-scale: 1.414; /* Augmented Fourth*/
+  --font-size-scale: 1.618;
   --font-size-base: 1rem;
 
   --font-size-xl: calc(var(--font-size-base) * pow(var(--font-size-scale), 3));
