@@ -1,6 +1,7 @@
 #import '@blocks/Hero/Hero.fragment.graphql'
 #import '@blocks/Section/Section.fragment.graphql'
 #import '@blocks/Text/Text.fragment.graphql'
+#import '@blocks/Timeline/Timeline.fragment.graphql'
 #import '@blocks/Title/Title.fragment.graphql'
 
 #import '@components/Link/Link.fragment.graphql'
@@ -30,24 +31,15 @@ query HomeQuery($locale: SiteLocale) {
     }
     header {
       __typename
-      ... on HeroRecord {
-        ...Hero
-      }
-      ... on TitleRecord {
-        ...Title
-      }
+      ...Hero
+      ...Title
     }
     body {
       __typename
-      ... on SectionRecord {
-        ...Section
-      }
-      ... on TextRecord {
-        ...Text
-      }
-      ... on TitleRecord {
-        ...Title
-      }
+      ...Section
+      ...Text
+      ...Timeline
+      ...Title
     }
     title
   }

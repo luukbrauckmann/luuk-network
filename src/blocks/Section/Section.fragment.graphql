@@ -1,4 +1,5 @@
 #import '@blocks/Text/Text.fragment.graphql'
+#import '@blocks/Timeline/Timeline.fragment.graphql'
 #import '@blocks/Title/Title.fragment.graphql'
 
 fragment Section on SectionRecord {
@@ -9,14 +10,11 @@ fragment Section on SectionRecord {
   }
   header {
     __typename
-    ... on TitleRecord {
-      ...Title
-    }
+    ...Title
   }
   content {
     __typename
-    ... on TextRecord {
-      ...Text
-    }
+    ...Text
+    ...Timeline
   }
 }

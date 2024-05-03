@@ -1,0 +1,7 @@
+fragment Timeline on TimelineRecord {
+  items {
+    id
+    title
+    description
+  }
+}

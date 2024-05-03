@@ -2,6 +2,7 @@
 
 interface ImportMetaEnv {
   readonly DATOCMS_READONLY_API_TOKEN: string;
+  readonly CF_PAGES_URL: string;
 }
 
 declare module "*.graphql" {

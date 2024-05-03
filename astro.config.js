@@ -5,8 +5,10 @@ import cloudflare from "@astrojs/cloudflare";
 import graphql from "@rollup/plugin-graphql";
 import sitemap from "@astrojs/sitemap";
 
+const { CF_PAGES_URL } = process.env;
+
 export default defineConfig({
-  site: process.env.CF_PAGES_URL,
+  site: CF_PAGES_URL,
   output: "hybrid",
   server: { port: 4832 },
   adapter: cloudflare(),
