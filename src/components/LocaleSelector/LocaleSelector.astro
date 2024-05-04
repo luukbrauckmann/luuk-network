@@ -17,13 +17,13 @@ if (slugs) {
 
 <ul class="locale-selector">
   {
-    slugs.map((slug: { locale: string }) => (
+    slugs.map((slug) => (
       <li>
         <Link
           class="locale-selector__link"
           icon={slug.locale}
           title={translate(slug.locale, slug.locale)}
-          link={`/${slug.locale}/`}
+          link={`/${slug.locale}/${slug.value}/`}
         />
       </li>
     ))

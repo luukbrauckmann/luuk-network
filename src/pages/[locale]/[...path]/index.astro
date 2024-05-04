@@ -27,6 +27,12 @@ const slug = await path.split("/").pop();
 
 const { app, site, page } = await datocms.request(query, { locale, slug });
 page.slugs = paths(page);
+
+switch (page.header.__typename) {
+  case "TitleRecord":
+    page.header.level = 1;
+    break;
+}
 ---
 
 <Default {app} {site} {page}>

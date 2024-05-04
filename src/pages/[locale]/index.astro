@@ -13,6 +13,12 @@ export async function getStaticPaths() {
 const { locale } = Astro.params;
 
 const { app, site, page } = await datocms.request(query, { locale });
+
+switch (page.header.__typename) {
+  case "TitleRecord":
+    page.header.level = 1;
+    break;
+}
 ---
 
 <Default {app} {site} {page}>

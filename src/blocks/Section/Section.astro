@@ -2,6 +2,12 @@
 import { Blocks } from "@blocks";
 
 const { slug, backgroundColor, header, content } = Astro.props;
+
+switch (header.__typename) {
+  case "TitleRecord":
+    header.level = 2;
+    break;
+}
 ---
 
 <section

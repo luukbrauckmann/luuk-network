@@ -1,8 +1,10 @@
 ---
-const { text } = Astro.props;
+const { text, level = 2 } = Astro.props;
+
+const Tag = `h${level}`;
 ---
 
-<h2 class="title-block">{text}</h2>
+<Tag class:list={["title-block"]}>{text}</Tag>
 
 <style>
   .title-block {
