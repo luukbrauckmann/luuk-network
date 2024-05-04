@@ -25,12 +25,12 @@
 }
 
 :root {
-  --font-size-scale: 1.618;
+  --font-size-scale: 1.25;
   --font-size-base: 1rem;
 
-  --font-size-xl: calc(var(--font-size-base) * pow(var(--font-size-scale), 3));
-  --font-size-lg: calc(var(--font-size-base) * pow(var(--font-size-scale), 2));
-  --font-size-md: calc(var(--font-size-base) * pow(var(--font-size-scale), 1));
+  --font-size-xl: calc(var(--font-size-base) * pow(var(--font-size-scale), 6));
+  --font-size-lg: calc(var(--font-size-base) * pow(var(--font-size-scale), 4));
+  --font-size-md: calc(var(--font-size-base) * pow(var(--font-size-scale), 2));
   --font-size-sm: calc(var(--font-size-base) / pow(var(--font-size-scale), 1));
   --font-size-xs: calc(var(--font-size-base) / pow(var(--font-size-scale), 2));
 
@@ -43,6 +43,7 @@
 
 @media screen and (min-width: 768px) {
   :root {
+    --font-size-scale: 1.333;
     --font-size-base: 1.125rem;
     --font-size-title: 3rem;
   }
