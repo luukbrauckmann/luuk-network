@@ -31,6 +31,7 @@ const { pages } = await datocms.request(query, { locale, pageType });
   .overview-block {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-auto-rows: minmax(0, 1fr);
     padding: 0;
     list-style: none;
   }
