@@ -1,7 +1,0 @@
-fragment Text on TextRecord {
-  text {
-    blocks
-    links
-    value
-  }
-}

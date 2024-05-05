@@ -1,8 +1,6 @@
 #import '@components/Image/Image.fragment.graphql'
 
-fragment Hero on HeroRecord {
-  title
-  subtitle
+fragment ImageBlock on ImageBlockRecord {
   image {
     ...Image
   }

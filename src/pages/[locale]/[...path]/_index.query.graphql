@@ -1,9 +1,10 @@
-#import '@blocks/Hero/Hero.fragment.graphql'
-#import '@blocks/Overview/Overview.fragment.graphql'
-#import '@blocks/Section/Section.fragment.graphql'
-#import '@blocks/Text/Text.fragment.graphql'
-#import '@blocks/Timeline/Timeline.fragment.graphql'
-#import '@blocks/Title/Title.fragment.graphql'
+#import '@blocks/HeroBlock/HeroBlock.fragment.graphql'
+#import '@blocks/ImageBlock/ImageBlock.fragment.graphql'
+#import '@blocks/OverviewBlock/OverviewBlock.fragment.graphql'
+#import '@blocks/SectionBlock/SectionBlock.fragment.graphql'
+#import '@blocks/TextBlock/TextBlock.fragment.graphql'
+#import '@blocks/TimelineBlock/TimelineBlock.fragment.graphql'
+#import '@blocks/TitleBlock/TitleBlock.fragment.graphql'
 
 #import '@components/Link/Link.fragment.graphql'
 
@@ -42,16 +43,17 @@ query Page($locale: SiteLocale, $slug: String) {
     }
     header {
       __typename
-      ...Hero
-      ...Title
+      ...HeroBlock
+      ...TitleBlock
     }
     body {
       __typename
-      ...Overview
-      ...Section
-      ...Text
-      ...Timeline
-      ...Title
+      ...ImageBlock
+      ...OverviewBlock
+      ...SectionBlock
+      ...TextBlock
+      ...TimelineBlock
+      ...TitleBlock
     }
     title
   }

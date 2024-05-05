@@ -1,4 +1,4 @@
-fragment Timeline on TimelineRecord {
+fragment TimelineBlock on TimelineBlockRecord {
   items {
     id
     title
