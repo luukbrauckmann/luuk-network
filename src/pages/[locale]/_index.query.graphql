@@ -30,7 +30,6 @@ query Home($locale: SiteLocale) {
       content
       tag
     }
-    pageType
     header {
       __typename
       ...Hero
