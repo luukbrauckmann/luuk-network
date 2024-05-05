@@ -15,7 +15,7 @@ const { pages } = await datocms.request(query, { locale, pageType });
       <li>
         <article class="overview-card">
           <div class="overview-card__image" />
-          <div>
+          <div class="overview-card__content">
             <h2 class="overview-card__title">{title}</h2>
             <p class="overview-card__description">{description}</p>
           </div>
@@ -53,6 +53,7 @@ const { pages } = await datocms.request(query, { locale, pageType });
     flex-direction: column;
     gap: var(--spacing-md);
     padding: var(--spacing-md);
+    height: 100%;
   }
 
   .overview-card__image {
@@ -68,7 +69,12 @@ const { pages } = await datocms.request(query, { locale, pageType });
     opacity: 1;
   }
 
+  .overview-card__content {
+    flex: 1;
+  }
+
   .overview-card__title {
+    margin-block-end: var(--spacing-sm);
     font-size: var(--font-size-md);
   }
 
