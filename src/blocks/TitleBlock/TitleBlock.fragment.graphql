@@ -1,3 +1,4 @@
 fragment TitleBlock on TitleBlockRecord {
-  text
+  title
+  description
 }

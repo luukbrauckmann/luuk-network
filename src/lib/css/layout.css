@@ -25,6 +25,10 @@ body > main {
   column-gap: var(--spacing-base);
 }
 
+body > main > *:last-child {
+  padding-block-end: var(--spacing-xl);
+}
+
 body > * > * {
   grid-column: main;
 }
