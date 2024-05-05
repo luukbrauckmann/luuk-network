@@ -4,7 +4,9 @@ const { text, level = 2 } = Astro.props;
 const Tag = `h${level}`;
 ---
 
-<Tag class:list={["title-block"]}>{text}</Tag>
+<div class="layout-text">
+  <Tag class:list={["title-block"]}>{text}</Tag>
+</div>
 
 <style>
   .title-block {

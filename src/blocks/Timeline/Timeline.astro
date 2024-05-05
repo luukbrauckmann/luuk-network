@@ -2,22 +2,25 @@
 const { items } = Astro.props;
 ---
 
-<ul class="timeline">
-  {
-    items.map(({ title, description }) => (
-      <li class="timeline-item">
-        <h3 class="timeline-item__title">{title}</h3>
-        <p class="timeline-item__description">{description}</p>
-      </li>
-    ))
-  }
-</ul>
+<div class="layout-text">
+  <ul class="timeline">
+    {
+      items.map(({ title, description }) => (
+        <li class="timeline-item">
+          <h3 class="timeline-item__title">{title}</h3>
+          <p class="timeline-item__description">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</div>
 
 <style>
   .timeline {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
+    margin-inline-start: 0.5em;
     border-left: 2px solid white;
     padding: 0;
     list-style-type: none;
