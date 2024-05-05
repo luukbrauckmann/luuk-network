@@ -1,0 +1,7 @@
+query OverviewPages($locale: SiteLocale, $pageType: String) {
+  pages: allPages(locale: $locale, filter: { pageType: { eq: $pageType } }) {
+    description
+    slug
+    title
+  }
+}

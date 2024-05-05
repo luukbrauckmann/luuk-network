@@ -1,4 +1,5 @@
 #import '@blocks/Hero/Hero.fragment.graphql'
+#import '@blocks/Overview/Overview.fragment.graphql'
 #import '@blocks/Section/Section.fragment.graphql'
 #import '@blocks/Text/Text.fragment.graphql'
 #import '@blocks/Timeline/Timeline.fragment.graphql'
@@ -6,7 +7,7 @@
 
 #import '@components/Link/Link.fragment.graphql'
 
-query PageQuery($locale: SiteLocale, $slug: String) {
+query Page($locale: SiteLocale, $slug: String) {
   site: _site(locale: $locale) {
     faviconMetaTags(variants: [icon, appleTouchIcon, msApplication]) {
       attributes
@@ -46,6 +47,7 @@ query PageQuery($locale: SiteLocale, $slug: String) {
     }
     body {
       __typename
+      ...Overview
       ...Section
       ...Text
       ...Timeline

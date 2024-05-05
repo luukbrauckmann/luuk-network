@@ -1,4 +1,5 @@
 #import '@blocks/Hero/Hero.fragment.graphql'
+#import '@blocks/Overview/Overview.fragment.graphql'
 #import '@blocks/Section/Section.fragment.graphql'
 #import '@blocks/Text/Text.fragment.graphql'
 #import '@blocks/Timeline/Timeline.fragment.graphql'
@@ -6,7 +7,7 @@
 
 #import '@components/Link/Link.fragment.graphql'
 
-query HomeQuery($locale: SiteLocale) {
+query Home($locale: SiteLocale) {
   site: _site(locale: $locale) {
     faviconMetaTags(variants: [icon, appleTouchIcon, msApplication]) {
       attributes
@@ -29,6 +30,7 @@ query HomeQuery($locale: SiteLocale) {
       content
       tag
     }
+    pageType
     header {
       __typename
       ...Hero
@@ -36,6 +38,7 @@ query HomeQuery($locale: SiteLocale) {
     }
     body {
       __typename
+      ...Overview
       ...Section
       ...Text
       ...Timeline

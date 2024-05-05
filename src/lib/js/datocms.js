@@ -15,7 +15,6 @@ export async function request(query, variables = {}) {
     body: JSON.stringify({ query: print(query), variables }),
   });
 
-  const res = await response.json();
-
-  return res.data;
+  const { data, errors } = await response.json();
+  return data ? data : { errors };
 }
