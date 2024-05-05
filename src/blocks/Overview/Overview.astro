@@ -18,7 +18,7 @@ const { pages } = await datocms.request(query, { locale, pageType });
             <h2 class="overview-card__title">{page.title}</h2>
             <p class="overview-card__description">{page.description}</p>
           </div>
-          <a class="overview-card__link" href={path.get(page)}>
+          <a class="overview-card__link" href={`/${locale}/${path.get(page)}`}>
             Read more
           </a>
         </article>
