@@ -1,7 +1,6 @@
 ---
-import { datocms } from "@lib/js";
+import { datocms, path } from "@lib/js";
 import query from "./Overview.query.graphql";
-import { Image } from "@components";
 
 const { locale } = Astro.params;
 const { pageType } = Astro.props;
@@ -11,15 +10,15 @@ const { pages } = await datocms.request(query, { locale, pageType });
 
 <ul class="overview-block">
   {
-    pages.map(({ title, description }) => (
+    pages.map((page) => (
       <li>
         <article class="overview-card">
           <div class="overview-card__image" />
           <div class="overview-card__content">
-            <h2 class="overview-card__title">{title}</h2>
-            <p class="overview-card__description">{description}</p>
+            <h2 class="overview-card__title">{page.title}</h2>
+            <p class="overview-card__description">{page.description}</p>
           </div>
-          <a class="overview-card__link" href="">
+          <a class="overview-card__link" href={path.get(page)}>
             Read more
           </a>
         </article>

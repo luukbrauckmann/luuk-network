@@ -3,5 +3,11 @@ query OverviewPages($locale: SiteLocale, $pageType: String) {
     description
     slug
     title
+    parentPage {
+      slug
+      parentPage {
+        slug
+      }
+    }
   }
 }

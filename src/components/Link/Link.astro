@@ -1,6 +1,6 @@
 ---
 import { Icon } from "@components";
-import { path } from "@lib/js/path";
+import { path } from "@lib/js";
 
 const { locale } = Astro.params;
 const {
@@ -21,7 +21,7 @@ switch (link?.__typename) {
     href = `/${locale}/`;
     break;
   case "PageRecord":
-    href = `/${locale}/${path(link)}`;
+    href = `/${locale}/${path.get(link)}`;
     break;
   case "ExternalLinkRecord":
     href = link.link;

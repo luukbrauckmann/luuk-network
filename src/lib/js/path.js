@@ -1,4 +1,4 @@
-export const path = (page) => {
+export const get = (page) => {
   let path = [page.slug];
   let parentPage = page.parentPage;
 
