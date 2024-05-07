@@ -1,10 +1,24 @@
 import { translations } from "@lib/data";
 
+let locale = "en";
+
+export const setLocale = (/** @type {string} */ newLocale) => {
+  return locale = newLocale;
+}
+
+export const getLocale = () => {
+  return locale;
+};
+
 export const translate = (
   /** @type {string} */ key,
-  /** @type {string} */ locale,
 ) => {
-  return translations[locale][key] ?? key;
+  const translation = translations[locale][key];
+  if (translation) {
+    return translation;
+  }
+  console.warn(`Translation not found for ${key}`);
+  return key;
 };
 
 export const paths = (page) => {

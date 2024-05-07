@@ -5,6 +5,7 @@ import { Default } from "@layouts";
 import { Blocks } from "@blocks";
 
 import query from "./_index.query.graphql";
+import { translate } from "@lib/js/i18n";
 
 export async function getStaticPaths() {
   return siteData.locales.map((locale: string) => ({ params: { locale } }));

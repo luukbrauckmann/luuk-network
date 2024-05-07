@@ -18,7 +18,7 @@ let href = "";
 
 switch (link?.__typename) {
   case "HomeRecord":
-    href = `/${locale}/`;
+    href = `/${locale}`;
     break;
   case "PageRecord":
     href = `/${locale}/${path.get(link)}`;
