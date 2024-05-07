@@ -35,17 +35,17 @@
   "domain": null,
   "internal_domain": "luukbrauckmann.admin.datocms.com",
   "locales": [
-    "nl",
-    "en"
+    "en",
+    "nl"
   ],
-  "last_data_change_at": "2024-04-28T16:14:13.382Z",
+  "last_data_change_at": "2024-05-07T14:47:52.861Z",
   "google_maps_api_token": "AIzaSyDMMrHWNDFFrsj-MYvM0ScFmkzA1YmgsAo",
   "global_seo": {
     "nl": {
       "site_name": "luuk.network",
       "fallback_seo": {
         "title": "Luuk Brauckmann",
-        "description": "Luuk Brauckmann is een Front-end Developer & Designer met focus op toegankelijkheid",
+        "description": "Front-end Developer gespecialiseerd in toegankelijkheid en webstandaarden",
         "image": null,
         "twitter_card": "summary",
         "no_index": null
@@ -55,10 +55,10 @@
       "facebook_page_url": ""
     },
     "en": {
-      "site_name": "luukbrauckmann.dev",
+      "site_name": "luuk.network",
       "fallback_seo": {
         "title": "Luuk Brauckmann",
-        "description": "Luuk Brauckmann is  Front-end Developer & Designer with focus for accessibility",
+        "description": "Front-end Developer specialized in accessibility and web standards",
         "image": null,
         "twitter_card": "summary_large_image",
         "no_index": null
@@ -102,6 +102,10 @@
       "type": "item_type"
     },
     {
+      "id": "MpFEqqiKR4WLYy0W6gDvXA",
+      "type": "item_type"
+    },
+    {
       "id": "ByGZNmxASQauP0wIrQhL9w",
       "type": "item_type"
     },
@@ -134,7 +138,19 @@
       "type": "item_type"
     },
     {
+      "id": "DbgNcFY2QSe3qkF2f60Tuw",
+      "type": "item_type"
+    },
+    {
       "id": "KsSbaoj3SNKhAYUOsK-Qxw",
+      "type": "item_type"
+    },
+    {
+      "id": "DSHGD3-LTx65oLQYYx7JEw",
+      "type": "item_type"
+    },
+    {
+      "id": "GYoUiZDhS7uh615ToPPeCA",
       "type": "item_type"
     }
   ],

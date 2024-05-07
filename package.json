@@ -3,14 +3,14 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "predev": "node ./scripts/predev.js",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "node scripts/build.js",
     "preview": "astro preview",
     "astro": "astro",
     "icons": "svg-sprite-generate -d src/lib/icons -o src/lib/sprites/icon-sprite.svg",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "site": "node scripts/site.js"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^9.1.0",
