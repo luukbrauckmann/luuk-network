@@ -12,11 +12,8 @@ export default defineConfig({
   output: "hybrid",
   server: { port: 4832 },
   adapter: cloudflare({
-    mode: 'directory',
-    functionPerRoute: true,
-    runtime: {
-      mode: 'local',
-      type: 'pages',
+    platformProxy: {
+      enabled: true
     },
   }),
   integrations: [sitemap()],
