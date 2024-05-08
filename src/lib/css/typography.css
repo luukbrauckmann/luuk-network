@@ -2,8 +2,8 @@
   font-style: normal;
   font-weight: 300 800;
   font-stretch: 100%;
-  src: url(/fonts/open-sans.woff2) format("woff2");
-  font-family: "open-sans";
+  src: url(/fonts/Open-Sans.woff2) format("woff2");
+  font-family: "Open Sans";
   font-display: swap;
 }
 
@@ -11,16 +11,74 @@
   font-style: italic;
   font-weight: 300 800;
   font-stretch: 100%;
-  src: url(/fonts/open-sans-Italic.woff2) format("woff2");
-  font-family: "open-sans";
+  src: url(/fonts/Open-Sans-Italic.woff2) format("woff2");
+  font-family: "Open Sans";
   font-display: swap;
 }
 
 @font-face {
   font-style: normal;
-  font-weight: 400 700;
-  src: url(/fonts/pixelify-sans.woff2) format("woff2");
-  font-family: "pixelify-sans";
+  font-weight: 400;
+  src:
+    url(/fonts/pixelify-sans/pixelify-sans-regular/pixelify-sans-regular.woff2) format("woff2"),
+    url(/fonts/pixelify-sans/pixelify-sans-regular/pixelify-sans-regular.woff) format("woff"),
+    url(/fonts/pixelify-sans/pixelify-sans-regular/pixelify-sans-regular.ttf) format("truetype");
+  font-family: "Pixelify Sans";
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  src:
+    url(/fonts/pixelify-sans/pixelify-sans-medium/pixelify-sans-medium.woff2) format("woff2"),
+    url(/fonts/pixelify-sans/pixelify-sans-medium/pixelify-sans-medium.woff) format("woff"),
+    url(/fonts/pixelify-sans/pixelify-sans-medium/pixelify-sans-medium.ttf) format("truetype");
+  font-family: "Pixelify Sans";
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+  src:
+    url(/fonts/pixelify-sans/pixelify-sans-semibold/pixelify-sans-semibold.woff2) format("woff2"),
+    url(/fonts/pixelify-sans/pixelify-sans-semibold/pixelify-sans-semibold.woff) format("woff"),
+    url(/fonts/pixelify-sans/pixelify-sans-semibold/pixelify-sans-semibold.ttf) format("truetype");
+  font-family: "Pixelify Sans";
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url(/fonts/pixelify-sans/pixelify-sans-bold/pixelify-sans-bold.woff2) format("woff2"),
+    url(/fonts/pixelify-sans/pixelify-sans-bold/pixelify-sans-bold.woff) format("woff"),
+    url(/fonts/pixelify-sans/pixelify-sans-bold/pixelify-sans-bold.ttf) format("truetype");
+  font-family: "Pixelify Sans";
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 800;
+  src:
+    url(/fonts/pixelify-sans/pixelify-sans-extra-bold/pixelify-sans-extra-bold.woff2) format("woff2"),
+    url(/fonts/pixelify-sans/pixelify-sans-extra-bold/pixelify-sans-extra-bold.woff) format("woff"),
+    url(/fonts/pixelify-sans/pixelify-sans-extra-bold/pixelify-sans-extra-bold.ttf) format("truetype");
+  font-family: "Pixelify Sans";
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 900;
+  src:
+    url(/fonts/pixelify-sans/pixelify-sans-black/pixelify-sans-black.woff2) format("woff2"),
+    url(/fonts/pixelify-sans/pixelify-sans-black/pixelify-sans-black.woff) format("woff"),
+    url(/fonts/pixelify-sans/pixelify-sans-black/pixelify-sans-black.ttf) format("truetype");
+  font-family: "Pixelify Sans";
   font-display: swap;
 }
 
@@ -34,8 +92,8 @@
   --font-size-sm: calc(var(--font-size-base) / pow(var(--font-size-scale), 1));
   --font-size-xs: calc(var(--font-size-base) / pow(var(--font-size-scale), 2));
 
-  --font-family-base: "open-sans", system-ui, sans-serif;
-  --font-family-title: "pixelify-sans", system-ui, sans-serif;
+  --font-family-base: "Open Sans", system-ui, sans-serif;
+  --font-family-title: "Pixelify Sans", system-ui, sans-serif;
 
   --line-height-base: 1.5;
   --line-height-title: 1.15;
@@ -73,6 +131,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-weight: 500;
   line-height: var(--line-height-title);
   font-family: var(--font-family-title);
   text-wrap: balance;
