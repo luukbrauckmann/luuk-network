@@ -11,11 +11,7 @@ export default defineConfig({
   site: CF_PAGES_URL,
   output: "hybrid",
   server: { port: 4832 },
-  adapter: cloudflare({
-    platformProxy: {
-      enabled: true,
-    },
-  }),
+  adapter: cloudflare(),
   integrations: [sitemap()],
   vite: {
     plugins: [graphql()],
