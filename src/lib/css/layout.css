@@ -25,6 +25,13 @@ body > main {
   column-gap: var(--spacing-base);
 }
 
+@media screen and (min-width: 768px) {
+  body > main {
+    column-gap: var(--spacing-lg);
+  }
+  
+}
+
 body > main > *:last-child {
   padding-block-end: var(--spacing-xl);
 }
@@ -37,6 +44,13 @@ body > * > * {
   display: grid;
   grid-template-columns: [full-start] 1fr [text-start] minmax(0px, 80ch) [text-end] 1fr [full-end];
   column-gap: var(--spacing-base);
+}
+
+@media screen and (min-width: 768px) {
+  .layout-text {
+    column-gap: var(--spacing-lg);
+  }
+  
 }
 
 .layout-text > * {
