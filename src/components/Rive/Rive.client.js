@@ -1,4 +1,4 @@
-import { Rive } from '@rive-app/canvas-lite';
+import { Rive } from '@rive-app/canvas';
 
 class RiveCanvas extends HTMLElement {
   canvas = this.querySelector("canvas");
