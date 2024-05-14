@@ -9,7 +9,7 @@ class RiveCanvas extends HTMLElement {
 
   loadRive() {
     const r = new Rive({
-      src: "https://cdn.rive.app/animations/vehicles.riv",
+      src: "/rive-test.riv",
       canvas: this.canvas,
       autoplay: true,
       stateMachines: "bumpy",
