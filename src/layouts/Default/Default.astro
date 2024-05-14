@@ -7,6 +7,8 @@ import "@lib/css/reset.css";
 import "@lib/css/theme.css";
 import "@lib/css/typography.css";
 
+import riveWASMResource from '@rive-app/canvas/rive.wasm?url';
+
 const { locale } = Astro.params;
 const { app, site, page } = Astro.props;
 ---
@@ -24,6 +26,7 @@ const { app, site, page } = Astro.props;
     <link rel="preload" href="/fonts/open-sans/open-sans-regular/open-sans-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href="/fonts/pixelify-sans/pixelify-sans-regular/pixelify-sans-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href="/fonts/pixelify-sans/pixelify-sans-medium/pixelify-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href={riveWASMResource} as="fetch" crossorigin="anonymous" />
   </head>
 
   <body>

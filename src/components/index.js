@@ -6,6 +6,7 @@ export { default as Image } from "./Image/Image.astro";
 export { default as Link } from "./Link/Link.astro";
 export { default as LocaleSelector } from "./LocaleSelector/LocaleSelector.astro";
 export { default as Nav } from "./Nav/Nav.astro";
+export { default as Rive } from "./Rive/Rive.astro";
 export { default as Seo } from "./Seo/Seo.astro";
 export { default as Socials } from "./Socials/Socials.astro";
 export { default as StructuredText } from "./StructuredText/StructuredText.astro";
