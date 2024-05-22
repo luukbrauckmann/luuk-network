@@ -1,26 +1,14 @@
-import { Rive } from '@rive-app/canvas';
-
 class RiveCanvas extends HTMLElement {
   canvas = this.querySelector("canvas");
+  offscreenCanvas = this.canvas.transferControlToOffscreen();
+  worker = new Worker(new URL("./Rive.worker.js", import.meta.url), { type: "module" });
 
   constructor() {
     super();
   }
 
-  loadRive() {
-    const r = new Rive({
-      src: "/rive-test.riv",
-      canvas: this.canvas,
-      autoplay: true,
-      stateMachines: "bumpy",
-      onLoad: () => {
-        r.resizeDrawingSurfaceToCanvas();
-      },
-    });
-  }
-
   connectedCallback() {
-    this.loadRive();
+    this.worker.postMessage({type: "load", canvas: this.offscreenCanvas}, [this.offscreenCanvas]);
   }
 }
 

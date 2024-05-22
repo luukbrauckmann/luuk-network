@@ -17,6 +17,8 @@
     "@astrojs/sitemap": "^3.1.4",
     "@datocms/cma-client-node": "^3.3.1",
     "@rive-app/canvas": "^2.15.6",
+    "@rive-app/canvas-lite": "^2.15.6",
+    "@rive-app/webgl": "^2.15.6",
     "@rollup/plugin-graphql": "^2.0.4",
     "accept-language-parser": "^1.5.0",
     "astro": "^4.8.2",

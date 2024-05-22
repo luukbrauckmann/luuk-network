@@ -1,10 +1,18 @@
 ---
-import { Nav, Socials } from "@components";
+import { Socials } from "@components";
+import { translate } from "@lib/js/i18n";
 
 const { app } = Astro.props;
+
+const github = await fetch("https://api.github.com/users/luukbrauckmann");
+const githubData = await github.json();
+
 ---
 
 <footer class="footer">
+  <div>
+    <p>{ githubData.public_repos } {translate("public_repos")}</p>
+  </div>
   <Socials items={app.socials} />
   <div class="footer__top">
     <p class="copyright-disclaimer">{app.copyrightDisclaimer}</p>
