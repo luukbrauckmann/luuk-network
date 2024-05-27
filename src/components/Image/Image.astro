@@ -14,8 +14,9 @@ interface Props {
 
 const { responsiveImage, loading = "lazy" } = Astro.props;
 
+const sizes = [320, 576, 768, 992, 1200, 1400];
+
 const getSrcSet = (src: string) => {
-  const sizes = [320, 576, 768, 992, 1200, 1400];
   return sizes
     .map((size) => {
       const url = new URL(src);
@@ -24,12 +25,17 @@ const getSrcSet = (src: string) => {
     })
     .join(", ");
 };
+
+const getSizes = () => {
+  return sizes.map((size) => `(max-width: ${size}px) ${size}px`).join(", ");
+};
 ---
 
 <enhanced-image>
   <img
     src={responsiveImage.src}
     srcset={getSrcSet(responsiveImage.src)}
+    sizes={getSizes()}
     alt={responsiveImage.alt ?? ""}
     height={responsiveImage.height}
     width={responsiveImage.width}
