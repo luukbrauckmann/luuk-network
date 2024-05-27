@@ -11,7 +11,7 @@ const { title, subtitle, image } = Astro.props;
   {
     image && (
       <div class="hero-block__image">
-        <Image {...image} />
+        <Image {...image} loading="eager" />
       </div>
     )
   }

@@ -1,17 +1,18 @@
 ---
-// interface Props {
-//   responsiveImage: {
-//     alt: string;
-//     aspectRatio: number;
-//     base64: string;
-//     height: number;
-//     src: string;
-//     srcSet: string;
-//     width: number;
-//   };
-// }
+interface Props {
+  responsiveImage: {
+    alt: string;
+    aspectRatio: number;
+    base64: string;
+    height: number;
+    src: string;
+    srcSet: string;
+    width: number;
+  };
+  loading?: "lazy" | "eager";
+}
 
-const { responsiveImage } = Astro.props;
+const { responsiveImage, loading = "lazy" } = Astro.props;
 
 const getSrcSet = (src: string) => {
   const sizes = [320, 576, 768, 992, 1200, 1400];
@@ -32,7 +33,7 @@ const getSrcSet = (src: string) => {
     alt={responsiveImage.alt ?? ""}
     height={responsiveImage.height}
     width={responsiveImage.width}
-    loading="lazy"
+    {loading}
     style={{
       aspectRatio: responsiveImage.aspectRatio,
       backgroundImage: `url(${responsiveImage.base64})`
