@@ -10,7 +10,7 @@ const { title, subtitle, image } = Astro.props;
   </div>
   {
     image && (
-      <div>
+      <div class="hero-block__image">
         <Image {...image} />
       </div>
     )
@@ -20,19 +20,26 @@ const { title, subtitle, image } = Astro.props;
 <style>
   .hero-block {
     display: grid;
-    position: relative;
     grid-template-columns: 1fr;
     grid-auto-rows: max-content;
+    gap: var(--spacing-lg);
     place-content: center;
     z-index: -1;
-    margin-top: -3.5rem;
-    height: 85dvh;
+    padding-block-end: 0;
+    padding-block-start: 5rem;
+    margin-block-start: -5rem;
+    position: relative;
   }
 
   @media only screen and (min-width: 768px) {
     .hero-block {
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
       height: 90dvh;
+    }
+  }
+
+  @media only screen and (min-width: 992px) {
+    .hero-block {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     }
   }
 
@@ -44,5 +51,36 @@ const { title, subtitle, image } = Astro.props;
     .hero-block__title {
       font-size: clamp(3.5rem, 1.6429rem + 10.4464vw, 10rem);
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    .hero-block__image {
+      position: absolute;
+      height: 30%;
+      bottom: 0;
+      right: 0;
+      transform: translateX(55%);
+      height: 75%;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .hero-block__image {
+      transform: translateX(20%);
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    .hero-block__image {
+      transform: translateX(25%);
+    }
+  }
+
+  .hero-block__image :global(img) {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    mix-blend-mode: multiply;
   }
 </style>
