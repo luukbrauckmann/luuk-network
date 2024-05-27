@@ -12,12 +12,23 @@
 // }
 
 const { responsiveImage } = Astro.props;
+
+const getSrcSet = (src: string) => {
+  const sizes = [320, 576, 768, 992, 1200, 1400];
+  return sizes
+    .map((size) => {
+      const url = new URL(src);
+      url.searchParams.set("w", size.toString());
+      return `${url.href} ${size}w`;
+    })
+    .join(", ");
+};
 ---
 
 <enhanced-image>
   <img
     src={responsiveImage.src}
-    srcset={responsiveImage.srcSet}
+    srcset={getSrcSet(responsiveImage.src)}
     alt={responsiveImage.alt ?? ""}
     height={responsiveImage.height}
     width={responsiveImage.width}
