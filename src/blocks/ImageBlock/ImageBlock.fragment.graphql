@@ -1,7 +1,0 @@
-#import '@components/Image/Image.fragment.graphql'
-
-fragment ImageBlock on ImageBlockRecord {
-  image {
-    ...Image
-  }
-}

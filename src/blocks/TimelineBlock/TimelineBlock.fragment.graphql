@@ -1,7 +1,0 @@
-fragment TimelineBlock on TimelineBlockRecord {
-  items {
-    id
-    title
-    description
-  }
-}

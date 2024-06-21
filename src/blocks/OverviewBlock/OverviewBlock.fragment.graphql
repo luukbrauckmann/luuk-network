@@ -1,3 +1,0 @@
-fragment OverviewBlock on OverviewBlockRecord {
-  pageType
-}
