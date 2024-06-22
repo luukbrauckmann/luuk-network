@@ -3,37 +3,12 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "node scripts/build.js",
-    "preview": "astro preview",
-    "astro": "astro",
-    "icons": "svg-sprite-generate -d src/lib/icons -o src/lib/sprites/icon-sprite.svg",
-    "lint": "eslint .",
-    "site": "node scripts/site.js"
-  },
-  "dependencies": {
-    "@astrojs/cloudflare": "^9.2.1",
-    "@astrojs/sitemap": "^3.1.4",
-    "@datocms/cma-client-node": "^3.3.1",
-    "@rive-app/canvas": "^2.15.6",
-    "@rive-app/canvas-lite": "^2.15.6",
-    "@rive-app/webgl": "^2.15.6",
-    "@rollup/plugin-graphql": "^2.0.4",
-    "accept-language-parser": "^1.5.0",
-    "astro": "^4.8.2",
-    "datocms-structured-text-to-html-string": "^4.0.0",
-    "dotenv": "^16.4.5",
-    "graphql": "^16.8.1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@eslint/js": "^9.2.0",
-    "eslint": "^8.57.0",
-    "eslint-plugin-astro": "^1.1.2",
-    "eslint-plugin-jsdoc": "^48.2.3",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0",
-    "prettier-plugin-css-order": "^2.1.2"
+    "vite": "^5.3.1",
+    "vite-tsconfig-paths": "^4.3.2"
   }
 }

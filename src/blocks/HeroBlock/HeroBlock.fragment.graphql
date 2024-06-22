@@ -1,9 +1,0 @@
-#import '@components/Image/Image.fragment.graphql'
-
-fragment HeroBlock on HeroBlockRecord {
-  title
-  subtitle
-  image {
-    ...Image
-  }
-}

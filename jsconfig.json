@@ -1,17 +1,10 @@
 {
-  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "checkJs": true,
     "baseUrl": ".",
     "paths": {
-      "@blocks": ["src/blocks"],
-      "@blocks/*": ["src/blocks/*"],
-      "@components": ["src/components"],
-      "@components/*": ["src/components/*"],
-      "@layouts": ["src/layouts"],
-      "@layouts/*": ["src/layouts/*"],
-      "@lib": ["src/lib"],
-      "@lib/*": ["src/lib/*"]
-    }
+      "@styles/*": ["src/styles/*"]
+    },
+    "checkJs": true,
+    "allowJs": true
   }
 }
