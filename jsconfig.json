@@ -2,9 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "vite-plugin-ssg": ["plugins/vite-plugin-ssg"],
       "@styles/*": ["src/styles/*"]
     },
     "checkJs": true,
     "allowJs": true
-  }
+  },
+  "include": [
+    "src/**/*"
+  ]
 }

@@ -1,11 +1,10 @@
 import tsconfigPaths from "vite-tsconfig-paths";
+import ssg from "./plugins/vite-plugin-ssg";
 
 /** @type {import("vite").UserConfig} */
 export default {
-  root: "src/pages",
-  build: {
-    outDir: "dist",
-    emptyOutDir: true,
-  },
-  plugins: [tsconfigPaths()]
+  plugins: [
+    tsconfigPaths(), 
+    ssg()
+  ]
 };
